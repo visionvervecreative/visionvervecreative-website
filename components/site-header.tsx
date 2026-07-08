@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X, ArrowUpRight } from 'lucide-react'
 import { navLinks } from '@/lib/site-data'
@@ -11,6 +13,7 @@ import { ThemeToggle } from './theme-toggle'
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -23,6 +26,12 @@ export function SiteHeader() {
     document.body.style.overflow = open ? 'hidden' : ''
   }, [open])
 
+  useEffect(() => {
+    setOpen(false)
+  }, [pathname])
+
+  const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname.startsWith(href))
+
   return (
     <header className="fixed inset-x-0 top-0 z-[100]">
       <div
@@ -30,7 +39,7 @@ export function SiteHeader() {
           scrolled ? 'my-3 rounded-2xl py-2.5 glass' : 'my-4 py-2'
         }`}
       >
-        <a href="#home" className="flex items-center gap-2" aria-label="VisionVerve Creative home">
+        <Link href="/" className="flex items-center gap-2" aria-label="VisionVerve Creative home">
           <motion.span
             whileHover={{ rotate: -8, scale: 1.08 }}
             transition={{ type: 'spring', stiffness: 300, damping: 15 }}
@@ -41,31 +50,43 @@ export function SiteHeader() {
           <span className="hidden font-display text-base font-semibold tracking-tight sm:inline">
             VisionVerve
           </span>
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="rounded-full px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const active = isActive(link.href)
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`relative rounded-full px-3 py-2 text-sm transition-colors ${
+                  active ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                {link.label}
+                {active && (
+                  <motion.span
+                    layoutId="nav-active"
+                    className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-brand-gradient"
+                    transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                  />
+                )}
+              </Link>
+            )
+          })}
         </nav>
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
           <Magnetic className="hidden sm:block">
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               data-cursor="Let's talk"
               className="group inline-flex items-center gap-2 rounded-full bg-brand-gradient px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary/20"
             >
               Let&apos;s Build Something
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
+            </Link>
           </Magnetic>
           <button
             onClick={() => setOpen(true)}
@@ -97,26 +118,31 @@ export function SiteHeader() {
             </div>
             <nav className="flex flex-col gap-2 px-6 pt-6">
               {navLinks.map((link, i) => (
-                <motion.a
+                <motion.div
                   key={link.href}
-                  href={link.href}
-                  onClick={() => setOpen(false)}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.05 * i }}
-                  className="font-display text-3xl font-semibold tracking-tight"
                 >
-                  {link.label}
-                </motion.a>
+                  <Link
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className={`font-display text-3xl font-semibold tracking-tight ${
+                      isActive(link.href) ? 'text-gradient' : ''
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
               ))}
-              <a
-                href="#contact"
+              <Link
+                href="/contact"
                 onClick={() => setOpen(false)}
                 className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-gradient px-5 py-3.5 text-base font-semibold text-white"
               >
                 Let&apos;s Build Something
                 <ArrowUpRight className="h-4 w-4" />
-              </a>
+              </Link>
             </nav>
           </motion.div>
         )}

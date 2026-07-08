@@ -1,40 +1,27 @@
-import { AppShell } from '@/components/app-shell'
 import { Hero } from '@/components/sections/hero'
 import { ClientsMarquee } from '@/components/sections/clients-marquee'
 import { About } from '@/components/sections/about'
+import { WhyChoose } from '@/components/sections/why-choose'
+import { ServicesPreview } from '@/components/sections/services-preview'
 import { CreativeUniverse } from '@/components/sections/creative-universe'
-import { Process } from '@/components/sections/process'
-import { Portfolio } from '@/components/sections/portfolio'
-import { CaseStudy } from '@/components/sections/case-study'
-import { Showcase } from '@/components/sections/showcase'
+import { FeaturedProjects } from '@/components/sections/featured-projects'
 import { Testimonials } from '@/components/sections/testimonials'
-import { TechStack } from '@/components/sections/tech-stack'
-import { Pricing } from '@/components/sections/pricing'
 import { Blog } from '@/components/sections/blog'
-import { Faq } from '@/components/sections/faq'
-import { Contact } from '@/components/sections/contact'
-import { SiteFooter } from '@/components/site-footer'
+import { CTA } from '@/components/sections/cta'
 
 export default function Home() {
   return (
-    <AppShell>
-      <main>
-        <Hero />
-        <ClientsMarquee />
-        <About />
-        <CreativeUniverse />
-        <Process />
-        <Portfolio />
-        <CaseStudy />
-        <Showcase />
-        <Testimonials />
-        <TechStack />
-        <Pricing />
-        <Blog />
-        <Faq />
-        <Contact />
-      </main>
-      <SiteFooter />
-    </AppShell>
+    <main>
+      <Hero />
+      <ClientsMarquee />
+      <About />
+      <WhyChoose />
+      <ServicesPreview />
+      <CreativeUniverse />
+      <FeaturedProjects />
+      <Testimonials />
+      <Blog />
+      <CTA />
+    </main>
   )
 }

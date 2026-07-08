@@ -41,7 +41,7 @@ export function About() {
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
             <div className="absolute bottom-6 left-6 flex items-center gap-3">
               <Image src="/logos/favicon.png" alt="" width={36} height={36} className="h-9 w-9 object-contain" />
-              <p className="font-display text-sm font-semibold">Est. 2018 · Global · Remote-first</p>
+              <p className="font-display text-sm font-semibold">Est. 2024 · Cape Town · Remote-friendly</p>
             </div>
           </div>
 

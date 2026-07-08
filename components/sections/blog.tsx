@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { blogPosts } from '@/lib/site-data'
 import { SectionHeading } from '@/components/section-heading'
@@ -13,11 +14,20 @@ export function Blog() {
   return (
     <section id="blog" className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6">
-        <SectionHeading
-          eyebrow="Journal"
-          title="Ideas, craft & field notes"
-          description="Perspectives from our studio on brand, design and technology."
-        />
+        <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+          <SectionHeading
+            eyebrow="Journal"
+            title="Ideas, craft & field notes"
+            description="Perspectives from our studio on brand, design and technology."
+          />
+          <Link
+            href="/blog"
+            className="group inline-flex shrink-0 items-center gap-2 rounded-full border border-border px-5 py-3 text-sm font-semibold transition-colors hover:bg-card"
+          >
+            View all insights
+            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </Link>
+        </div>
 
         <div className="mt-14 grid gap-6 lg:grid-cols-2">
           <Reveal>

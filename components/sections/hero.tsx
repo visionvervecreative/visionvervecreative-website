@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import Link from 'next/link'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowUpRight, Play, MousePointerClick } from 'lucide-react'
 import { heroServices, stats } from '@/lib/site-data'
@@ -108,24 +109,24 @@ export function Hero() {
           className="mt-10 flex flex-wrap items-center gap-4"
         >
           <Magnetic>
-            <a
-              href="#portfolio"
+            <Link
+              href="/portfolio"
               data-cursor="View"
               className="group inline-flex items-center gap-2 rounded-full bg-brand-gradient px-7 py-4 text-sm font-semibold text-white shadow-xl shadow-primary/25"
             >
               View Our Work
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
+            </Link>
           </Magnetic>
           <Magnetic>
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               data-cursor="Book"
               className="group inline-flex items-center gap-2 rounded-full border border-border px-7 py-4 text-sm font-semibold text-foreground transition-colors hover:bg-card"
             >
               <Play className="h-4 w-4 text-secondary" />
               Book Discovery Call
-            </a>
+            </Link>
           </Magnetic>
         </motion.div>
 

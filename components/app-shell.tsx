@@ -6,6 +6,8 @@ import { CustomCursor } from '@/components/custom-cursor'
 import { LoadingScreen } from '@/components/loading-screen'
 import { ScrollProgress, BackToTop } from '@/components/scroll-utils'
 import { SiteHeader } from '@/components/site-header'
+import { SiteFooter } from '@/components/site-footer'
+import { PageTransition } from '@/components/page-transition'
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   return (
@@ -15,7 +17,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       <CustomCursor />
       <ScrollProgress />
       <SiteHeader />
-      {children}
+      <PageTransition>{children}</PageTransition>
+      <SiteFooter />
       <BackToTop />
     </ThemeProvider>
   )

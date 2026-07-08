@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowUpRight, FileText } from 'lucide-react'
 import { projects, type Category } from '@/lib/site-data'
@@ -85,18 +86,18 @@ export function Portfolio() {
                     ))}
                   </div>
                   <div className="mt-6 flex items-center gap-3">
-                    <a
-                      href="#contact"
+                    <Link
+                      href="/case-studies"
                       className="inline-flex items-center gap-1.5 rounded-full bg-brand-gradient px-4 py-2 text-xs font-semibold text-white"
                     >
-                      View Project <ArrowUpRight className="h-3.5 w-3.5" />
-                    </a>
-                    <a
-                      href="#case-studies"
+                      View Case Study <ArrowUpRight className="h-3.5 w-3.5" />
+                    </Link>
+                    <Link
+                      href="/portfolio"
                       className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-xs font-semibold transition-colors hover:bg-background"
                     >
-                      <FileText className="h-3.5 w-3.5" /> Case Study
-                    </a>
+                      <FileText className="h-3.5 w-3.5" /> Details
+                    </Link>
                   </div>
                 </div>
               </motion.article>

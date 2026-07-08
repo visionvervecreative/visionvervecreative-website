@@ -2,6 +2,7 @@ import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Inter, Sora } from 'next/font/google'
 import './globals.css'
+import { AppShell } from '@/components/app-shell'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' })
 const sora = Sora({
@@ -66,7 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`dark ${inter.variable} ${sora.variable}`} suppressHydrationWarning>
       <body className="bg-background text-foreground antialiased">
-        {children}
+        <AppShell>{children}</AppShell>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

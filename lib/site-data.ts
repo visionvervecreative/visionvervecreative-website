@@ -9,15 +9,35 @@ import {
 } from 'lucide-react'
 
 export const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Case Studies', href: '#case-studies' },
-  { label: 'Testimonials', href: '#testimonials' },
-  { label: 'Blog', href: '#blog' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'Services', href: '/services' },
+  { label: 'Portfolio', href: '/portfolio' },
+  { label: 'Case Studies', href: '/case-studies' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Contact', href: '/contact' },
 ]
+
+export const company = {
+  name: 'VisionVerve Creative (Pty) Ltd',
+  founded: '2024',
+  location: 'Cape Town, South Africa',
+  email: 'visionvervetech@gmail.com',
+  phones: ['+27 69 341 5147', '+27 67 206 5334'],
+  whatsapp: '+27 69 341 5147',
+  hours: [
+    { day: 'Monday – Friday', time: '08:00 – 18:00' },
+    { day: 'Saturday', time: '09:00 – 14:00' },
+    { day: 'Sunday & Public Holidays', time: 'Closed' },
+  ],
+  socials: [
+    { label: 'Instagram', href: '#' },
+    { label: 'LinkedIn', href: '#' },
+    { label: 'Behance', href: '#' },
+    { label: 'YouTube', href: '#' },
+    { label: 'Dribbble', href: '#' },
+  ],
+}
 
 export const heroServices = [
   'Photography',
@@ -33,6 +53,25 @@ export const stats = [
   { value: 98, suffix: '%', label: 'Client Retention' },
   { value: 12, suffix: '', label: 'Awards Won' },
   { value: 40, suffix: '+', label: 'Team Creatives' },
+]
+
+export const whyChoose = [
+  {
+    title: 'One team, every discipline',
+    text: 'Branding, design, film and full-stack engineering under one roof — no handoffs, no lost context, one coherent vision.',
+  },
+  {
+    title: 'Strategy before pixels',
+    text: 'Every engagement starts with research and positioning so the work is beautiful and built to perform.',
+  },
+  {
+    title: 'Craft obsessed',
+    text: 'We sweat the details others skip — the micro-interactions, the kerning, the color grade, the load time.',
+  },
+  {
+    title: 'Built to scale',
+    text: 'Modern, headless, performance-first architecture that grows with your ambitions long after launch.',
+  },
 ]
 
 export type Service = {
@@ -186,6 +225,170 @@ export const processSteps = [
   { step: '06', title: 'Testing', text: 'QA, accessibility and performance validation across devices.' },
   { step: '07', title: 'Launch', text: 'A confident, orchestrated go-live moment.' },
   { step: '08', title: 'Support', text: 'Ongoing optimization, iteration and growth partnership.' },
+]
+
+export type ServiceDetail = {
+  id: string
+  icon: LucideIcon
+  title: string
+  tagline: string
+  overview: string
+  image: string
+  deliverables: string[]
+  requested: string[]
+  benefits: string[]
+  process: string[]
+  tools: string[]
+  startingFrom: string
+  faqs: { q: string; a: string }[]
+}
+
+export const serviceDetails: ServiceDetail[] = [
+  {
+    id: 'website-development',
+    icon: Code2,
+    title: 'Website Development',
+    tagline: 'Fast, beautiful, conversion-focused websites.',
+    overview:
+      'We design and build modern websites that load instantly, look stunning and turn visitors into customers. From marketing sites to headless commerce, every build is engineered for performance, accessibility and growth.',
+    image: '/images/project-web.png',
+    deliverables: ['Custom responsive website', 'CMS setup & training', 'SEO foundations', 'Analytics & tracking', 'Performance optimization'],
+    requested: ['Business & landing sites', 'Headless e-commerce', 'Web app front-ends', 'Site redesigns & migrations'],
+    benefits: ['Sub-second load times', 'Higher conversion rates', 'Effortless content editing', 'Ranks well on Google'],
+    process: ['Discovery & UX', 'Design', 'Development', 'Launch & optimize'],
+    tools: ['Next.js', 'React', 'TypeScript', 'Tailwind', 'WordPress', 'Vercel'],
+    startingFrom: 'R 12 000',
+    faqs: [
+      { q: 'How long does a website take?', a: 'Most marketing sites launch in 3–6 weeks depending on scope and content readiness.' },
+      { q: 'Can I edit the site myself?', a: 'Yes — we integrate a friendly CMS and train your team so you stay in control.' },
+    ],
+  },
+  {
+    id: 'software-development',
+    icon: Cpu,
+    title: 'Software Development',
+    tagline: 'Custom platforms engineered to scale.',
+    overview:
+      'When off-the-shelf tools fall short, we build bespoke software — dashboards, portals, automation and APIs — designed around your workflow and ready to grow with your business.',
+    image: '/images/project-software.png',
+    deliverables: ['Custom web application', 'API design & integration', 'Admin dashboards', 'Automation workflows', 'Cloud deployment'],
+    requested: ['Internal tools & portals', 'SaaS products', 'Booking & CRM systems', 'Third-party integrations'],
+    benefits: ['Automate manual work', 'Own your platform', 'Scales with demand', 'Secure by design'],
+    process: ['Architecture', 'Build', 'Integrate', 'Scale'],
+    tools: ['React', 'Next.js', 'Node.js', 'TypeScript', 'Firebase', 'PostgreSQL'],
+    startingFrom: 'R 25 000',
+    faqs: [
+      { q: 'Do you maintain the software after launch?', a: 'Yes, we offer ongoing support and retainer options to keep your platform evolving.' },
+      { q: 'Can you integrate with our existing systems?', a: 'Absolutely — we specialise in connecting APIs, payment gateways and third-party tools.' },
+    ],
+  },
+  {
+    id: 'graphic-design',
+    icon: PenTool,
+    title: 'Graphic Design',
+    tagline: 'Editorial-grade visuals across every touchpoint.',
+    overview:
+      'From social campaigns to print collateral, our design work turns strategy into visuals that command attention and stay unmistakably on-brand.',
+    image: '/images/project-branding.png',
+    deliverables: ['Social media kits', 'Marketing collateral', 'Print & packaging', 'Presentation decks', 'Motion graphics'],
+    requested: ['Campaign creative', 'Pitch & sales decks', 'Event & signage design', 'Ad creative sets'],
+    benefits: ['Consistent brand look', 'Scroll-stopping creative', 'Faster campaign turnaround', 'Ready-to-use assets'],
+    process: ['Brief', 'Art direction', 'Design', 'Delivery'],
+    tools: ['Figma', 'Adobe Photoshop', 'Illustrator', 'After Effects', 'InDesign'],
+    startingFrom: 'R 3 500',
+    faqs: [
+      { q: 'Do you offer monthly design retainers?', a: 'Yes — many clients use a monthly retainer for ongoing social and campaign creative.' },
+      { q: 'Will I get editable source files?', a: 'You receive organised, production-ready source files for every deliverable.' },
+    ],
+  },
+  {
+    id: 'branding',
+    icon: Sparkles,
+    title: 'Branding',
+    tagline: 'Identities that make audiences feel something.',
+    overview:
+      'We craft distinctive brand identities and strategy — the names, logos, systems and stories that make a brand instantly recognisable and impossible to forget.',
+    image: '/images/project-branding.png',
+    deliverables: ['Brand strategy', 'Logo & identity system', 'Colour & typography', 'Brand guidelines', 'Brand messaging'],
+    requested: ['New brand launches', 'Rebrands & refreshes', 'Sub-brand systems', 'Brand guidelines'],
+    benefits: ['Instant recognition', 'Premium perception', 'Cohesive across media', 'Confident brand story'],
+    process: ['Discovery', 'Strategy', 'Identity', 'Guidelines'],
+    tools: ['Figma', 'Adobe Illustrator', 'Photoshop', 'InDesign'],
+    startingFrom: 'R 9 500',
+    faqs: [
+      { q: 'What is included in a brand guideline?', a: 'Logo usage, colour, typography, imagery, tone of voice and application examples.' },
+      { q: 'Can you refresh our brand without starting over?', a: 'Yes — we offer brand refreshes that modernise your identity while keeping equity.' },
+    ],
+  },
+  {
+    id: 'photography',
+    icon: Camera,
+    title: 'Photography',
+    tagline: 'Cinematic imagery that gives brands a soul.',
+    overview:
+      'Product, lifestyle and campaign photography with a signature look — crafted lighting, art direction and retouching that make your brand look world-class.',
+    image: '/images/project-photo.png',
+    deliverables: ['Product photography', 'Lifestyle & campaign shoots', 'On-location or studio', 'Professional retouching', 'Usage-ready exports'],
+    requested: ['E-commerce product shoots', 'Brand & lifestyle campaigns', 'Team & headshots', 'Event coverage'],
+    benefits: ['Consistent visual identity', 'Higher product appeal', 'Assets for every channel', 'Standout campaign imagery'],
+    process: ['Concept', 'Art direction', 'Shoot', 'Retouch'],
+    tools: ['Full-frame cameras', 'Studio lighting', 'Capture One', 'Lightroom', 'Photoshop'],
+    startingFrom: 'R 4 500',
+    faqs: [
+      { q: 'Do you shoot on-location?', a: 'Yes — we shoot in our studio or on-location across Cape Town and beyond.' },
+      { q: 'How many edited images do we receive?', a: 'Deliverables are tailored per shoot; we agree on final counts during planning.' },
+    ],
+  },
+  {
+    id: 'videography',
+    icon: Video,
+    title: 'Videography',
+    tagline: 'Story-driven films that stop the scroll.',
+    overview:
+      'From brand films to social content, we handle every stage — script, production, editing, colour and sound — to create video that moves people and drives results.',
+    image: '/images/project-video.png',
+    deliverables: ['Brand films', 'Social video & reels', 'Product & promo videos', 'Editing & colour grade', 'Sound design'],
+    requested: ['Brand & hero films', 'Social content packages', 'Product launches', 'Event & recap videos'],
+    benefits: ['Higher engagement', 'Emotional connection', 'Content for every platform', 'Professional production value'],
+    process: ['Script', 'Production', 'Edit', 'Colour & sound'],
+    tools: ['Cinema cameras', 'Gimbals & drones', 'Premiere Pro', 'DaVinci Resolve', 'After Effects'],
+    startingFrom: 'R 8 000',
+    faqs: [
+      { q: 'Do you handle scripting and concept?', a: 'Yes — we can take a project from first idea through to the final graded film.' },
+      { q: 'Can you produce content for social specifically?', a: 'Definitely — we craft vertical, platform-native content built to perform.' },
+    ],
+  },
+]
+
+export const coreValues = [
+  { title: 'Craft Over Shortcuts', text: 'We choose the harder, better path — the detail nobody asked for but everybody feels.' },
+  { title: 'Honesty Over Hype', text: 'Straight answers, realistic timelines and work that speaks louder than promises.' },
+  { title: 'Partnership Over Transactions', text: 'We win when you win. We embed with your team and stay invested well past launch.' },
+  { title: 'Curiosity Over Comfort', text: 'We question defaults, explore the new and keep learning so your brand stays ahead.' },
+  { title: 'Impact Over Output', text: 'Beautiful is the baseline. We measure ourselves on the outcomes we create.' },
+  { title: 'Together Over Silos', text: 'One team spanning strategy, design, film and code — no handoffs, no lost ideas.' },
+]
+
+export const timeline = [
+  { year: '2024', title: 'VisionVerve is born', text: 'Founded in Cape Town with a belief that creativity and technology belong together.' },
+  { year: '2024', title: 'First clients & identity', text: 'Launched our first brand systems and websites, shaping the VisionVerve signature look.' },
+  { year: '2025', title: 'Full-service studio', text: 'Expanded into photography, videography and software — a true end-to-end creative team.' },
+  { year: '2026', title: 'Scaling the vision', text: 'Growing our collective and partnering with ambitious brands across the globe.' },
+]
+
+export const philosophy = [
+  { title: 'Design with intent', text: 'Every decision serves a purpose — beauty and function are never at odds.' },
+  { title: 'Engineer for tomorrow', text: 'We build on modern, scalable foundations so the work lasts and grows.' },
+  { title: 'Tell human stories', text: 'Technology is the medium; emotion and story are the message.' },
+]
+
+export type TeamMember = { name: string; role: string; initials: string }
+
+export const team: TeamMember[] = [
+  { name: 'Joining Soon', role: 'Creative Director', initials: 'VV' },
+  { name: 'Joining Soon', role: 'Lead Engineer', initials: 'VV' },
+  { name: 'Joining Soon', role: 'Brand Strategist', initials: 'VV' },
+  { name: 'Joining Soon', role: 'Head of Film', initials: 'VV' },
 ]
 
 export type Category =

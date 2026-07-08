@@ -87,6 +87,96 @@ export const services: Service[] = [
   },
 ]
 
+export type UniverseNode = {
+  id: string
+  title: string
+  short: string
+  icon: LucideIcon
+  fx: number
+  fy: number
+  tooltip: string
+  flow: string[]
+  message: string
+}
+
+export const universeNodes: UniverseNode[] = [
+  {
+    id: 'branding',
+    title: 'Branding & Strategy',
+    short: 'Branding',
+    icon: Sparkles,
+    fx: 0.5,
+    fy: 0.1,
+    tooltip: 'Building a complete visual identity.',
+    flow: ['Discovery', 'Brand Strategy', 'Identity System', 'Guidelines'],
+    message: 'Every VisionVerve project starts with strategy — a complete visual identity that audiences feel and remember.',
+  },
+  {
+    id: 'photography',
+    title: 'Photography',
+    short: 'Photography',
+    icon: Camera,
+    fx: 0.2,
+    fy: 0.34,
+    tooltip: 'Capturing moments that tell your story.',
+    flow: ['Concept', 'Art Direction', 'Shoot', 'Retouch'],
+    message: 'We capture moments that tell your story — cinematic imagery that gives the brand a soul.',
+  },
+  {
+    id: 'videography',
+    title: 'Videography',
+    short: 'Videography',
+    icon: Video,
+    fx: 0.8,
+    fy: 0.34,
+    tooltip: 'Motion that moves people.',
+    flow: ['Script', 'Production', 'Edit', 'Color & Sound'],
+    message: 'Story-driven films and social content that stop the scroll and set the brand in motion.',
+  },
+  {
+    id: 'graphic',
+    title: 'Graphic Design',
+    short: 'Graphic Design',
+    icon: PenTool,
+    fx: 0.5,
+    fy: 0.42,
+    tooltip: 'Turning ideas into visual experiences.',
+    flow: ['Idea', 'Art Direction', 'Design', 'Delivery'],
+    message: 'Design turns strategy into visual experiences — the connective tissue between brand and product.',
+  },
+  {
+    id: 'website',
+    title: 'Website Development',
+    short: 'Web Dev',
+    icon: Code2,
+    fx: 0.5,
+    fy: 0.66,
+    tooltip: 'Beautiful design meets powerful technology.',
+    flow: ['Graphic Design', 'Website Development', 'Software Integration', 'Launch'],
+    message: 'At VisionVerve, websites are not built in isolation. They are powered by branding, design, content and technology.',
+  },
+  {
+    id: 'software',
+    title: 'Software Development',
+    short: 'Software',
+    icon: Cpu,
+    fx: 0.5,
+    fy: 0.9,
+    tooltip: 'Powerful systems behind beautiful products.',
+    flow: ['Architecture', 'Development', 'Integration', 'Scale'],
+    message: 'Custom platforms and automation engineered to scale — the engine behind every experience we ship.',
+  },
+]
+
+export const universeEdges: [string, string][] = [
+  ['branding', 'photography'],
+  ['branding', 'videography'],
+  ['branding', 'graphic'],
+  ['photography', 'videography'],
+  ['graphic', 'website'],
+  ['website', 'software'],
+]
+
 export const processSteps = [
   { step: '01', title: 'Discovery', text: 'We listen, audit and align on goals, audience and ambition.' },
   { step: '02', title: 'Research', text: 'Market, competitor and user research to ground every decision.' },

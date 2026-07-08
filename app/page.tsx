@@ -2,7 +2,7 @@ import { AppShell } from '@/components/app-shell'
 import { Hero } from '@/components/sections/hero'
 import { ClientsMarquee } from '@/components/sections/clients-marquee'
 import { About } from '@/components/sections/about'
-import { Services } from '@/components/sections/services'
+import { CreativeUniverse } from '@/components/sections/creative-universe'
 import { Process } from '@/components/sections/process'
 import { Portfolio } from '@/components/sections/portfolio'
 import { CaseStudy } from '@/components/sections/case-study'
@@ -22,7 +22,7 @@ export default function Home() {
         <Hero />
         <ClientsMarquee />
         <About />
-        <Services />
+        <CreativeUniverse />
         <Process />
         <Portfolio />
         <CaseStudy />

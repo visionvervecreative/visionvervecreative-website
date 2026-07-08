@@ -64,6 +64,7 @@
   --brand-indigo: #5b34e8;
   --brand-orange: #ff7a1a;
   --brand-pink: #ff2d9b;
+  --brand-gradient: linear-gradient(100deg, #5b34e8, #ff2d9b 55%, #ff7a1a);
 }
 
 .light {
@@ -86,6 +87,11 @@
   --border: rgba(20, 18, 29, 0.1);
   --input: rgba(20, 18, 29, 0.14);
   --ring: #4b26d6;
+
+  --brand-indigo: #4b26d6;
+  --brand-orange: #f26a05;
+  --brand-pink: #e01a86;
+  --brand-gradient: linear-gradient(100deg, #4b26d6, #e01a86 55%, #f26a05);
 }
 
 @layer base {

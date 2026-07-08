@@ -1,23 +1,40 @@
-export default function Page() {
+import { AppShell } from '@/components/app-shell'
+import { Hero } from '@/components/sections/hero'
+import { ClientsMarquee } from '@/components/sections/clients-marquee'
+import { About } from '@/components/sections/about'
+import { Services } from '@/components/sections/services'
+import { Process } from '@/components/sections/process'
+import { Portfolio } from '@/components/sections/portfolio'
+import { CaseStudy } from '@/components/sections/case-study'
+import { Showcase } from '@/components/sections/showcase'
+import { Testimonials } from '@/components/sections/testimonials'
+import { TechStack } from '@/components/sections/tech-stack'
+import { Pricing } from '@/components/sections/pricing'
+import { Blog } from '@/components/sections/blog'
+import { Faq } from '@/components/sections/faq'
+import { Contact } from '@/components/sections/contact'
+import { SiteFooter } from '@/components/site-footer'
+
+export default function Home() {
   return (
-    <main className="relative flex min-h-screen items-center justify-center bg-[color:light-dark(#fff,#000)] text-[color:light-dark(#000,#fff)]">
-      <svg
-        aria-hidden="true"
-        className="size-20"
-        fill="none"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
-        stroke="currentColor"
-        strokeWidth="0.5"
-      >
-        <path
-          d="M14.2 14.2H17V6.9375C17 4.76288 15.2371 3 13.0625 3H5.8V5.8M14.2 14.2V7.79063L7.79062 14.2H14.2ZM14.2 14.2V17H6.9375C4.76288 17 3 15.2371 3 13.0625V5.8H5.8M5.8 5.8V12.2313L12.2313 5.8H5.8Z"
-          strokeLinejoin="round"
-        />
-      </svg>
-      <p className="absolute left-1/2 top-[calc(50%+56px)] -translate-x-1/2 whitespace-nowrap text-sm font-medium text-muted-foreground">
-        Your v0 generation will show here.
-      </p>
-    </main>
+    <AppShell>
+      <main>
+        <Hero />
+        <ClientsMarquee />
+        <About />
+        <Services />
+        <Process />
+        <Portfolio />
+        <CaseStudy />
+        <Showcase />
+        <Testimonials />
+        <TechStack />
+        <Pricing />
+        <Blog />
+        <Faq />
+        <Contact />
+      </main>
+      <SiteFooter />
+    </AppShell>
   )
 }

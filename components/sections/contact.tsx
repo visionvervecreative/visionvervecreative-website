@@ -2,10 +2,11 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowUpRight, Mail, MapPin, Phone, Check } from 'lucide-react'
+import { ArrowUpRight, Mail, MapPin, Phone, Check, Clock, MessageCircle } from 'lucide-react'
 import { SectionHeading } from '@/components/section-heading'
 import { Reveal } from '@/components/anim/reveal'
 import { Magnetic } from '@/components/anim/magnetic'
+import { company } from '@/lib/site-data'
 
 const services = [
   'Website Development',
@@ -15,6 +16,8 @@ const services = [
   'Photography',
   'Videography',
 ]
+
+const waNumber = company.whatsapp.replace(/[^0-9]/g, '')
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false)
@@ -43,11 +46,12 @@ export function Contact() {
 
             <div className="mt-10 space-y-5">
               {[
-                { icon: Mail, label: 'Email', value: 'hello@visionverve.studio' },
-                { icon: Phone, label: 'Phone', value: '+1 (415) 555-0139' },
-                { icon: MapPin, label: 'Studio', value: 'San Francisco · Remote worldwide' },
-              ].map((c) => (
-                <Reveal key={c.label}>
+                { icon: Mail, label: 'Email', value: company.email, href: `mailto:${company.email}` },
+                { icon: Phone, label: 'Call us', value: company.phones.join('  ·  '), href: `tel:${company.phones[0].replace(/\s/g, '')}` },
+                { icon: MessageCircle, label: 'WhatsApp', value: company.whatsapp, href: `https://wa.me/${waNumber}` },
+                { icon: MapPin, label: 'Studio', value: company.location, href: undefined },
+              ].map((c) => {
+                const Inner = (
                   <div className="flex items-center gap-4">
                     <span className="grid size-11 place-items-center rounded-2xl border border-border bg-card text-primary">
                       <c.icon className="size-5" />
@@ -57,8 +61,36 @@ export function Contact() {
                       <p className="font-medium">{c.value}</p>
                     </div>
                   </div>
-                </Reveal>
-              ))}
+                )
+                return (
+                  <Reveal key={c.label}>
+                    {c.href ? (
+                      <a href={c.href} className="block transition-opacity hover:opacity-80">
+                        {Inner}
+                      </a>
+                    ) : (
+                      Inner
+                    )}
+                  </Reveal>
+                )
+              })}
+
+              <Reveal>
+                <div className="rounded-3xl border border-border bg-card p-6">
+                  <div className="flex items-center gap-2 text-sm font-semibold">
+                    <Clock className="size-4 text-secondary" />
+                    Business hours
+                  </div>
+                  <dl className="mt-4 space-y-2 text-sm">
+                    {company.hours.map((h) => (
+                      <div key={h.day} className="flex items-center justify-between gap-4">
+                        <dt className="text-muted-foreground">{h.day}</dt>
+                        <dd className="font-medium">{h.time}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
+              </Reveal>
             </div>
           </div>
 

@@ -577,6 +577,30 @@ export const blogPosts = [
     image: '/images/project-video.png',
     featured: false,
   },
+  {
+    title: 'Product photography that sells',
+    category: 'Photography',
+    excerpt: 'Composition, light and retouching principles that make products irresistible.',
+    date: 'Jan 22, 2026',
+    image: '/images/project-photo.png',
+    featured: false,
+  },
+  {
+    title: 'From idea to platform in eight weeks',
+    category: 'Software',
+    excerpt: 'A behind-the-scenes look at how we scope, build and ship custom software fast.',
+    date: 'Jan 09, 2026',
+    image: '/images/project-software.png',
+    featured: false,
+  },
+  {
+    title: 'Building a brand system that scales',
+    category: 'Branding',
+    excerpt: 'Design tokens, components and guidelines that keep growing brands consistent.',
+    date: 'Dec 15, 2025',
+    image: '/images/project-branding.png',
+    featured: false,
+  },
 ]
 
 export const faqs = [

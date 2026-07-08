@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { Check, Sparkles } from 'lucide-react'
 import { pricing } from '@/lib/site-data'
 import { SectionHeading } from '@/components/section-heading'
@@ -54,8 +55,8 @@ export function Pricing() {
                   ))}
                 </ul>
                 <Magnetic strength={0.25}>
-                  <a
-                    href="#contact"
+                  <Link
+                    href="/contact"
                     className={`mt-8 inline-flex w-full items-center justify-center rounded-full px-5 py-3.5 text-sm font-semibold transition-colors ${
                       plan.featured
                         ? 'bg-brand-gradient text-white'
@@ -63,7 +64,7 @@ export function Pricing() {
                     }`}
                   >
                     Get Started
-                  </a>
+                  </Link>
                 </Magnetic>
               </div>
             </Reveal>

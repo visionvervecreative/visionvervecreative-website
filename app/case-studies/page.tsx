@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { PageHero } from '@/components/page-hero'
 import { CaseStudy } from '@/components/sections/case-study'
 import { Testimonials } from '@/components/sections/testimonials'
-import { Cta } from '@/components/sections/cta'
+import { CTA } from '@/components/sections/cta'
 
 export const metadata: Metadata = {
   title: 'Case Studies — Results & Impact',
@@ -25,7 +25,7 @@ export default function CaseStudiesPage() {
       />
       <CaseStudy />
       <Testimonials />
-      <Cta />
+      <CTA />
     </>
   )
 }

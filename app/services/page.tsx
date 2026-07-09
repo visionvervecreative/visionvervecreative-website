@@ -5,7 +5,7 @@ import { ServiceNav } from '@/components/services/service-nav'
 import { ServiceDetailSection } from '@/components/services/service-detail'
 import { Pricing } from '@/components/sections/pricing'
 import { Faq } from '@/components/sections/faq'
-import { Cta } from '@/components/sections/cta'
+import { CTA } from '@/components/sections/cta'
 
 export const metadata: Metadata = {
   title: 'Services — Branding, Web, Software, Film & Photography',

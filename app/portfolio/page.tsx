@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { PageHero } from '@/components/page-hero'
 import { PortfolioGallery } from '@/components/portfolio/gallery'
 import { ClientsMarquee } from '@/components/sections/clients-marquee'
-import { Cta } from '@/components/sections/cta'
+import { CTA } from '@/components/sections/cta'
 
 export const metadata: Metadata = {
   title: 'Portfolio — Selected Work',
@@ -25,7 +25,7 @@ export default function PortfolioPage() {
       />
       <PortfolioGallery />
       <ClientsMarquee />
-      <Cta />
+      <CTA />
     </>
   )
 }

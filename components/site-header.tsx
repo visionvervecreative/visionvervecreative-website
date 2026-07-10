@@ -35,9 +35,8 @@ export function SiteHeader() {
   return (
     <header className="fixed inset-x-0 top-0 z-[100]">
       <div
-        className={`mx-auto flex max-w-7xl items-center justify-between px-4 transition-all duration-500 sm:px-6 ${
-          scrolled ? 'my-3 rounded-2xl py-2.5 glass' : 'my-4 py-2'
-        }`}
+        className={`mx-auto flex max-w-7xl items-center justify-between px-4 transition-all duration-500 sm:px-6 ${scrolled ? 'my-3 rounded-2xl py-2.5 glass' : 'my-4 py-2'
+          }`}
       >
         <Link href="/" className="flex items-center gap-2" aria-label="VisionVerve Creative home">
           <motion.span
@@ -48,7 +47,7 @@ export function SiteHeader() {
             <Image src="/logos/favicon.png" alt="" width={40} height={40} className="h-9 w-9 object-contain" />
           </motion.span>
           <span className="hidden font-display text-base font-semibold tracking-tight sm:inline">
-            VisionVerve
+            VisionVerve Creative
           </span>
         </Link>
 
@@ -59,9 +58,8 @@ export function SiteHeader() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative rounded-full px-3 py-2 text-sm transition-colors ${
-                  active ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'
-                }`}
+                className={`relative rounded-full px-3 py-2 text-sm transition-colors ${active ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'
+                  }`}
               >
                 {link.label}
                 {active && (
@@ -127,9 +125,8 @@ export function SiteHeader() {
                   <Link
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className={`font-display text-3xl font-semibold tracking-tight ${
-                      isActive(link.href) ? 'text-gradient' : ''
-                    }`}
+                    className={`font-display text-3xl font-semibold tracking-tight ${isActive(link.href) ? 'text-gradient' : ''
+                      }`}
                   >
                     {link.label}
                   </Link>

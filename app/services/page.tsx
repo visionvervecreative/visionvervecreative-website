@@ -31,13 +31,13 @@ export default function ServicesPage() {
 
       <div>
         {serviceDetails.map((service, i) => (
-          <ServiceDetailSection key={service.id} service={service} index={i} />
+          <ServiceDetailSection key={service.id} serviceId={service.id} index={i} />
         ))}
       </div>
 
       <Pricing />
       <Faq />
-      <Cta />
+      <CTA />
     </>
   )
 }

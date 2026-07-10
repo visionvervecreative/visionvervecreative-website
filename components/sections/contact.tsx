@@ -39,9 +39,9 @@ export function Contact() {
           <div>
             <SectionHeading
               align="left"
-              eyebrow="Contact"
-              title="Let's build something unforgettable"
-              description="Tell us about your vision. We reply within one business day."
+              eyebrow="Get in touch"
+              title="Reach us directly"
+              description="Prefer to talk? Use any of the channels below, or send the brief and we'll reply within one business day."
             />
 
             <div className="mt-10 space-y-5">

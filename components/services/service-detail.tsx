@@ -4,9 +4,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ArrowUpRight, Check, Sparkles } from 'lucide-react'
-import type { ServiceDetail } from '@/lib/site-data'
+import { serviceDetails } from '@/lib/site-data'
 
-export function ServiceDetailSection({ service, index }: { service: ServiceDetail; index: number }) {
+export function ServiceDetailSection({ serviceId, index }: { serviceId: string; index: number }) {
+  const service = serviceDetails.find((s) => s.id === serviceId)
+  if (!service) return null
   const flip = index % 2 === 1
   const Icon = service.icon
 

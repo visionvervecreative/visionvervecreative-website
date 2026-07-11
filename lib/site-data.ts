@@ -492,15 +492,55 @@ export const testimonials = [
   },
 ]
 
-export const clients = [
-  'Aurora',
-  'Lumen',
-  'Vertex',
-  'Maison Noir',
-  'Momentum',
-  'Halo',
-  'Nova',
-  'Atlas',
+export type Client = {
+  /** Business name shown until a logo is available */
+  name: string
+  /** Scope of work delivered / planned for this partner */
+  project: string
+  /** Destination once a dedicated case study exists. Falls back to /case-studies for now */
+  href: string
+  /** Optional logo path — when set, the marquee can render this instead of the name */
+  logo?: string
+  /** When true, clicking shows a subtle "Coming Soon" interaction instead of navigating */
+  comingSoon?: boolean
+}
+
+/**
+ * Real businesses VisionVerve Creative has partnered with.
+ * CMS-ready: add new clients here (name + project + href) without touching the component.
+ * When logos become available, set `logo` and the marquee will swap text for the image.
+ */
+export const clients: Client[] = [
+  {
+    name: 'Realeboga Auto Mobile Detailers',
+    project: 'Branding, Graphic Design & Marketing Materials',
+    href: '/case-studies',
+    comingSoon: true,
+  },
+  {
+    name: 'SD Construction Company',
+    project: 'Company Rebrand & Corporate Website',
+    href: '/case-studies',
+    comingSoon: true,
+  },
+  {
+    name: 'Spencer Auto Mechanical Works',
+    project: 'Website Design & Development',
+    href: '/case-studies',
+    comingSoon: true,
+  },
+  {
+    name: 'Edinah Chagwedera Studio',
+    project: 'Portfolio Website Design & Development',
+    href: '/case-studies',
+    comingSoon: true,
+  },
+  {
+    name: 'P & I Legal Consultancy',
+    project: 'Corporate Website & Brand Identity',
+    href: '/case-studies',
+    comingSoon: true,
+  },
 ]
 
 export const techStack = [

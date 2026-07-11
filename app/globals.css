@@ -178,6 +178,11 @@
   animation: marquee 32s linear infinite;
 }
 
+/* Pause the seamless marquee while hovering over the section */
+.marquee-pause:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee {
     animation: none;

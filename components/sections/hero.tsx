@@ -15,9 +15,11 @@ const headline2 = ['We', 'Create', 'Experiences.']
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
-  const y = useTransform(scrollYProgress, [0, 1], [0, 160])
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.15])
+  // Gentle parallax that fully settles before the section leaves the viewport,
+  // so the hero flows into the marquee with no jump or overlap.
+  const y = useTransform(scrollYProgress, [0, 1], [0, 80])
+  const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0])
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.06])
 
   const [index, setIndex] = useState(0)
   useEffect(() => {
@@ -28,7 +30,7 @@ export function Hero() {
   return (
     <section id="home" ref={ref} className="relative flex min-h-svh items-center overflow-hidden">
       {/* Cinematic animated background */}
-      <motion.div style={{ scale }} className="absolute inset-0 -z-10">
+      <motion.div style={{ scale }} className="absolute inset-0 -z-10 will-change-transform [transform:translateZ(0)]">
         <div className="absolute inset-0 bg-background" />
         <motion.div
           animate={{ x: [0, 60, 0], y: [0, -40, 0] }}
@@ -50,7 +52,7 @@ export function Hero() {
         <div className="noise absolute inset-0 opacity-[0.12]" />
       </motion.div>
 
-      <motion.div style={{ y, opacity }} className="mx-auto w-full max-w-7xl px-4 pt-28 sm:px-6">
+      <motion.div style={{ y, opacity }} className="mx-auto w-full max-w-7xl px-4 pb-16 pt-28 will-change-transform [transform:translateZ(0)] sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}

@@ -398,22 +398,67 @@ export const timeline = [
   { year: '2026', title: 'Scaling the vision', text: 'Growing our team and partnering with ambitious brands across the globe.' },
 ]
 
-/** "The Future We're Building" roadmap pillars */
-export const futureRoadmap = [
-  'AI-Powered Business Solutions',
-  'SaaS Products',
-  'Digital Transformation Services',
-  'Global Client Partnerships',
-  'The VisionVerve Creative Campus',
-  'Innovation & Research Labs',
-  'Creative Production Studios',
-  'Startup Incubation',
-  'Technology Training & Mentorship',
-  'Venture Building',
+/** Ecosystem pillars for "Building Africa's Next Creative Technology Ecosystem" */
+export type EcosystemPillar = { title: string; text: string; tier: 'now' | 'building' | 'vision' }
+
+export const ecosystemPillars: EcosystemPillar[] = [
+  {
+    title: 'AI-Powered Business Solutions',
+    text: 'Intelligent tools that automate work and unlock new capabilities for the businesses we partner with.',
+    tier: 'now',
+  },
+  {
+    title: 'SaaS Products',
+    text: 'Scalable software products designed to solve real problems for teams across the continent and beyond.',
+    tier: 'building',
+  },
+  {
+    title: 'Digital Transformation Services',
+    text: 'Guiding organisations from legacy systems to modern, connected, future-ready operations.',
+    tier: 'now',
+  },
+  {
+    title: 'Global Client Partnerships',
+    text: 'Long-term relationships with ambitious brands, wherever they are in the world.',
+    tier: 'now',
+  },
+  {
+    title: 'VisionVerve Creative Campus',
+    text: 'A home for creativity and technology — where teams, talent and ideas converge under one roof.',
+    tier: 'vision',
+  },
+  {
+    title: 'Innovation & Research Labs',
+    text: 'Dedicated space to experiment with emerging technology and turn bold ideas into working products.',
+    tier: 'vision',
+  },
+  {
+    title: 'Creative Production Studios',
+    text: 'Full-scale studios for photography, film and design that raise the bar for African brands.',
+    tier: 'building',
+  },
+  {
+    title: 'Startup Incubation',
+    text: 'Backing early-stage founders with the design, technology and strategy they need to launch.',
+    tier: 'vision',
+  },
+  {
+    title: 'Technology Training & Mentorship',
+    text: 'Growing the next generation of creative technologists through hands-on learning and mentorship.',
+    tier: 'building',
+  },
+  {
+    title: 'Venture Building',
+    text: 'Co-creating and launching new companies from the ground up alongside visionary partners.',
+    tier: 'vision',
+  },
 ]
 
+export const futureHeading = "Building Africa's Next Creative Technology Ecosystem"
+export const futureIntro =
+  "VisionVerve isn't just building a Creative Technology Company. We're building an ecosystem where creativity, technology, innovation, education, and entrepreneurship come together to shape the future of African business."
 export const futureStatement =
-  'We believe the future belongs to businesses that embrace creativity, innovation, and technology together. VisionVerve exists to help build that future.'
+  "Our ambition isn't simply to build successful businesses. It's to build the ecosystem that empowers thousands of them."
 
 export const philosophy = [
   { title: 'Design with intent', text: 'Every decision serves a purpose — beauty and function are never at odds.' },

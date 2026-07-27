@@ -1,17 +1,11 @@
 'use client'
 
-import Image from 'next/image'
-import { motion, useScroll, useTransform } from 'framer-motion'
-import { useRef } from 'react'
 import { Compass, Eye } from 'lucide-react'
 import { SectionHeading } from '@/components/section-heading'
 import { Reveal } from '@/components/anim/reveal'
+import { BrandComposition } from '@/components/brand-composition'
 
 export function AboutStory() {
-  const ref = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
-  const imgY = useTransform(scrollYProgress, [0, 1], ['-10%', '10%'])
-
   return (
     <section className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -19,54 +13,68 @@ export function AboutStory() {
           <div>
             <SectionHeading
               eyebrow="Our Story"
-              title={<>Founded in 2024 to make <span className="text-gradient">creativity and code</span> one craft</>}
+              title={<>Where ideas become <span className="text-gradient">extraordinary experiences</span></>}
             />
             <div className="mt-6 space-y-4 text-pretty leading-relaxed text-muted-foreground">
               <p>
-                VisionVerve Creative began in Cape Town with a single conviction: the most memorable brands
-                are built where design, storytelling and engineering meet — not in separate rooms, but at one table.
+                VisionVerve was founded on a shared belief that businesses deserve more than fragmented
+                services—they deserve a creative partner capable of bringing every aspect of their digital
+                presence together.
               </p>
               <p>
-                What started as a small studio quickly grew into a full-service creative technology partner,
-                spanning branding, graphic design, photography, videography, websites and software. Every
-                discipline sharpens the others, and every project is stronger for it.
+                Too often, businesses are forced to work with multiple agencies for branding, websites, software,
+                marketing, photography, and content creation. We saw an opportunity to simplify that experience by
+                creating a company where creativity, technology, and strategy work together under one roof.
               </p>
               <p>
-                Today, VisionVerve is a collective of makers obsessed with detail and outcomes — helping
-                ambitious brands look, feel and perform unmistakably like themselves.
+                Instead of offering isolated services, we envisioned a multidisciplinary Creative Technology
+                Company where designers, developers, strategists, photographers, filmmakers, and creative thinkers
+                collaborate to deliver complete, future-ready solutions.
               </p>
             </div>
           </div>
 
-          <div ref={ref} className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-border">
-            <motion.div style={{ y: imgY }} className="absolute inset-0">
-              <Image
-                src="/images/studio.png"
-                alt="The VisionVerve Creative studio"
-                fill
-                className="scale-110 object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </motion.div>
-            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-            <div className="absolute bottom-6 left-6 flex items-center gap-3">
-              <Image src="/logos/favicon.png" alt="" width={36} height={36} className="h-9 w-9 object-contain" />
-              <p className="font-display text-sm font-semibold">Cape Town, South Africa · Est. 2024</p>
-            </div>
+          <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-border">
+            <BrandComposition caption="Cape Town, South Africa • Est. 2024" />
           </div>
         </div>
+
+        <Reveal>
+          <div className="mt-16 rounded-3xl border border-border bg-card p-8 sm:p-10">
+            <h3 className="font-display text-2xl font-semibold">Our name reflects who we are</h3>
+            <div className="mt-6 grid gap-6 md:grid-cols-2">
+              <div className="rounded-2xl border border-border bg-background p-6">
+                <span className="font-display text-3xl font-bold text-gradient">Vision</span>
+                <p className="mt-3 leading-relaxed text-muted-foreground">
+                  Clarity, innovation, strategic thinking, and seeing opportunities before they become
+                  possibilities.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-border bg-background p-6">
+                <span className="font-display text-3xl font-bold text-gradient">Verve</span>
+                <p className="mt-3 leading-relaxed text-muted-foreground">
+                  Creativity, passion, energy, and the relentless pursuit of excellence.
+                </p>
+              </div>
+            </div>
+            <p className="mt-6 text-pretty leading-relaxed text-muted-foreground">
+              Together, VisionVerve represents our commitment to transforming bold ideas into impactful digital
+              experiences through creativity, technology, and innovation.
+            </p>
+          </div>
+        </Reveal>
 
         <div className="mt-16 grid gap-6 md:grid-cols-2">
           {[
             {
               icon: Compass,
               label: 'Mission',
-              text: 'To fuse creativity and technology into experiences that move people and grow brands.',
+              text: 'To empower businesses with innovative creative and technology solutions that inspire growth, strengthen brands, and create lasting digital experiences.',
             },
             {
               icon: Eye,
               label: 'Vision',
-              text: 'A world where every brand we touch feels crafted, human and unforgettable.',
+              text: "To become one of Africa's leading Creative Technology Companies, recognized globally for delivering world-class branding, digital experiences, software solutions, and innovative technologies.",
             },
           ].map((p, i) => (
             <Reveal key={p.label} delay={i}>

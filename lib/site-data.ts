@@ -49,28 +49,37 @@ export const heroServices = [
 ]
 
 export const stats = [
-  { value: 240, suffix: '+', label: 'Projects Delivered' },
-  { value: 98, suffix: '%', label: 'Client Retention' },
-  { value: 12, suffix: '', label: 'Awards Won' },
-  { value: 40, suffix: '+', label: 'Team Creatives' },
+  { value: 3, suffix: '', label: 'Founding Team Members' },
+  { value: 5, suffix: '+', label: 'Brands Developed' },
+  { value: 4, suffix: '+', label: 'Websites Designed & Developed' },
+  { value: 2, suffix: '', label: 'Software Solutions Built' },
+  { value: 100, suffix: '%', label: 'Commitment to Client Success' },
 ]
 
 export const whyChoose = [
   {
-    title: 'One team, every discipline',
-    text: 'Branding, design, film and full-stack engineering under one roof — no handoffs, no lost context, one coherent vision.',
+    title: 'Creative & Technology Under One Roof',
+    text: 'From branding and design to software, AI, websites, photography, videography, and digital experiences, VisionVerve provides complete creative solutions through one trusted partner.',
   },
   {
-    title: 'Strategy before pixels',
-    text: 'Every engagement starts with research and positioning so the work is beautiful and built to perform.',
+    title: 'Strategy Before Execution',
+    text: 'Every project begins with understanding your goals, audience, and challenges so every solution creates measurable business value—not just beautiful visuals.',
   },
   {
-    title: 'Craft obsessed',
-    text: 'We sweat the details others skip — the micro-interactions, the kerning, the color grade, the load time.',
+    title: 'Tailored Around Your Business',
+    text: 'We never rely on generic templates or shortcuts. Every solution is carefully crafted to reflect your identity, objectives, and long-term vision.',
   },
   {
-    title: 'Built to scale',
-    text: 'Modern, headless, performance-first architecture that grows with your ambitions long after launch.',
+    title: 'Built for Sustainable Growth',
+    text: 'Our websites, software, brands, and digital experiences are designed to grow with your business and adapt to future opportunities.',
+  },
+  {
+    title: 'Collaborative Partnerships',
+    text: 'We believe the strongest results come from honest communication, shared ideas, transparency, and long-term relationships built on trust.',
+  },
+  {
+    title: 'Innovation That Moves Businesses Forward',
+    text: 'We continuously embrace emerging technologies, AI-powered solutions, and forward-thinking strategies that keep our clients ahead in an ever-changing digital landscape.',
   },
 ]
 
@@ -361,20 +370,50 @@ export const serviceDetails: ServiceDetail[] = [
 ]
 
 export const coreValues = [
-  { title: 'Craft Over Shortcuts', text: 'We choose the harder, better path — the detail nobody asked for but everybody feels.' },
-  { title: 'Honesty Over Hype', text: 'Straight answers, realistic timelines and work that speaks louder than promises.' },
-  { title: 'Partnership Over Transactions', text: 'We win when you win. We embed with your team and stay invested well past launch.' },
-  { title: 'Curiosity Over Comfort', text: 'We question defaults, explore the new and keep learning so your brand stays ahead.' },
-  { title: 'Impact Over Output', text: 'Beautiful is the baseline. We measure ourselves on the outcomes we create.' },
-  { title: 'Together Over Silos', text: 'One team spanning strategy, design, film and code — no handoffs, no lost ideas.' },
+  { title: 'Innovation', text: 'We embrace new ideas, emerging technologies and creative thinking to keep our clients ahead.' },
+  { title: 'Excellence', text: 'We hold every detail to a world-class standard, because good enough never is.' },
+  { title: 'Integrity', text: 'We lead with honesty, transparency and always doing what is right for our partners.' },
+  { title: 'Creativity', text: 'We bring passion, energy and imagination to every brand and experience we build.' },
+  { title: 'Collaboration', text: 'We work as one team with our clients, combining perspectives to create better outcomes.' },
+  { title: 'Growth', text: 'We build brands, products and relationships designed to grow far beyond launch.' },
+]
+
+/** Short value keywords shown in the About "Our Values" card */
+export const valueKeywords = ['Innovation', 'Excellence', 'Integrity', 'Creativity', 'Collaboration', 'Growth']
+
+/** "What We Believe" statements rendered as animated cards */
+export const beliefs = [
+  'We believe creativity has the power to transform businesses.',
+  'We believe technology should empower people, not complicate their lives.',
+  'We believe every brand deserves a unique story.',
+  'We believe innovation begins with understanding people.',
+  'We believe lasting partnerships create lasting impact.',
+  'We believe excellence comes through collaboration, integrity, and continuous improvement.',
 ]
 
 export const timeline = [
   { year: '2024', title: 'VisionVerve is born', text: 'Founded in Cape Town with a belief that creativity and technology belong together.' },
   { year: '2024', title: 'First clients & identity', text: 'Launched our first brand systems and websites, shaping the VisionVerve signature look.' },
-  { year: '2025', title: 'Full-service studio', text: 'Expanded into photography, videography and software — a true end-to-end creative team.' },
-  { year: '2026', title: 'Scaling the vision', text: 'Growing our collective and partnering with ambitious brands across the globe.' },
+  { year: '2025', title: 'One creative technology company', text: 'Expanded into photography, videography and software — a true end-to-end creative technology partner.' },
+  { year: '2026', title: 'Scaling the vision', text: 'Growing our team and partnering with ambitious brands across the globe.' },
 ]
+
+/** "The Future We're Building" roadmap pillars */
+export const futureRoadmap = [
+  'AI-Powered Business Solutions',
+  'SaaS Products',
+  'Digital Transformation Services',
+  'Global Client Partnerships',
+  'The VisionVerve Creative Campus',
+  'Innovation & Research Labs',
+  'Creative Production Studios',
+  'Startup Incubation',
+  'Technology Training & Mentorship',
+  'Venture Building',
+]
+
+export const futureStatement =
+  'We believe the future belongs to businesses that embrace creativity, innovation, and technology together. VisionVerve exists to help build that future.'
 
 export const philosophy = [
   { title: 'Design with intent', text: 'Every decision serves a purpose — beauty and function are never at odds.' },
@@ -382,13 +421,27 @@ export const philosophy = [
   { title: 'Tell human stories', text: 'Technology is the medium; emotion and story are the message.' },
 ]
 
-export type TeamMember = { name: string; role: string; initials: string }
+export type TeamMember = { name: string; role: string; initials: string; bio: string }
 
 export const team: TeamMember[] = [
-  { name: 'Joining Soon', role: 'Creative Director', initials: 'VV' },
-  { name: 'Joining Soon', role: 'Lead Engineer', initials: 'VV' },
-  { name: 'Joining Soon', role: 'Brand Strategist', initials: 'VV' },
-  { name: 'Joining Soon', role: 'Head of Film', initials: 'VV' },
+  {
+    name: 'Allen Chisvo',
+    role: 'Founder & Creative Technology Director',
+    initials: 'AC',
+    bio: "Leads VisionVerve's creative vision, software development, digital strategy, and innovation initiatives, ensuring every solution blends technology with purposeful design.",
+  },
+  {
+    name: 'Thandeka Malande',
+    role: 'Co-Founder & Software Development Lead',
+    initials: 'TM',
+    bio: 'Specializes in designing and developing scalable software solutions that combine functionality, reliability, and exceptional user experiences.',
+  },
+  {
+    name: 'Weslyne Chari',
+    role: 'Co-Founder & Finance & Marketing Director',
+    initials: 'WC',
+    bio: 'Oversees financial operations, marketing strategy, and business development while building strong relationships with clients and strategic partners.',
+  },
 ]
 
 export type Category =

@@ -18,7 +18,7 @@ export function Blog() {
           <SectionHeading
             eyebrow="Journal"
             title="Ideas, craft & field notes"
-            description="Perspectives from our studio on brand, design and technology."
+            description="Perspectives from our team on brand, design and technology."
           />
           <Link
             href="/blog"

@@ -17,7 +17,7 @@ export function SiteFooter() {
               className="h-24 w-auto"
             />
             <p className="mt-4 max-w-xs text-sm text-muted-foreground leading-relaxed">
-              A creative technology studio in Cape Town crafting brands, films and software that move people.
+              A Creative Technology Company in Cape Town crafting brands, films and software that move people. We don&apos;t just build brands—we create experiences.
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
               {company.socials.map((s) => (

@@ -2,6 +2,7 @@ import { Hero } from '@/components/sections/hero'
 import { ClientsMarquee } from '@/components/sections/clients-marquee'
 import { About } from '@/components/sections/about'
 import { WhyChoose } from '@/components/sections/why-choose'
+import { Future } from '@/components/sections/future'
 import { ServicesPreview } from '@/components/sections/services-preview'
 import { CreativeUniverse } from '@/components/sections/creative-universe'
 import { FeaturedProjects } from '@/components/sections/featured-projects'
@@ -16,6 +17,7 @@ export default function Home() {
       <ClientsMarquee />
       <About />
       <WhyChoose />
+      <Future />
       <ServicesPreview />
       <CreativeUniverse />
       <FeaturedProjects />

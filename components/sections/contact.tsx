@@ -49,7 +49,7 @@ export function Contact() {
                 { icon: Mail, label: 'Email', value: company.email, href: `mailto:${company.email}` },
                 { icon: Phone, label: 'Call us', value: company.phones.join('  ·  '), href: `tel:${company.phones[0].replace(/\s/g, '')}` },
                 { icon: MessageCircle, label: 'WhatsApp', value: company.whatsapp, href: `https://wa.me/${waNumber}` },
-                { icon: MapPin, label: 'Studio', value: company.location, href: undefined },
+                { icon: MapPin, label: 'Location', value: company.location, href: undefined },
               ].map((c) => {
                 const Inner = (
                   <div className="flex items-center gap-4">

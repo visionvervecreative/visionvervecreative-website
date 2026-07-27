@@ -7,7 +7,7 @@ import { CTA } from '@/components/sections/cta'
 export const metadata: Metadata = {
   title: 'Portfolio — Selected Work',
   description:
-    'A selection of branding, web, software, photography and film projects from the VisionVerve Creative Tech studio.',
+    'A selection of branding, web, software, photography and film projects from VisionVerve Creative, a Creative Technology Company.',
 }
 
 export default function PortfolioPage() {

@@ -20,7 +20,7 @@ export default function BlogPage() {
             Ideas, craft & <span className="text-gradient">field notes</span>
           </>
         }
-        description="Perspectives from our studio on the intersection of creativity and technology."
+        description="Perspectives from our team on the intersection of creativity and technology."
       />
       <BlogList />
       <Newsletter />

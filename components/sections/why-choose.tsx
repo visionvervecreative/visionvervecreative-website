@@ -16,14 +16,18 @@ export function WhyChoose() {
           <div className="lg:sticky lg:top-28">
             <SectionHeading
               eyebrow="Why VisionVerve"
-              title={<>The partner brands <span className="text-gradient">trust to go further</span></>}
-              description="We are not a vendor you brief and forget. We embed with your team, challenge the easy answers and obsess over outcomes."
+              title={<>Why businesses <span className="text-gradient">choose VisionVerve</span></>}
+              description="We don't simply deliver creative services—we become a long-term creative and technology partner dedicated to helping businesses innovate, grow, and succeed. Every solution we create is built around your goals, your audience, and your future."
             />
 
             <div className="mt-10 grid grid-cols-2 gap-4">
               {stats.map((s, i) => (
-                <Reveal key={s.label} delay={i}>
-                  <div className="rounded-2xl border border-border bg-card p-5">
+                <Reveal
+                  key={s.label}
+                  delay={i}
+                  className={i === stats.length - 1 && stats.length % 2 === 1 ? 'col-span-2' : undefined}
+                >
+                  <div className="h-full rounded-2xl border border-border bg-card p-5">
                     <p className="font-display text-3xl font-bold">
                       <CountUp to={s.value} suffix={s.suffix} />
                     </p>

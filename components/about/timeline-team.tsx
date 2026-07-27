@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { UserPlus } from 'lucide-react'
 import { timeline, team } from '@/lib/site-data'
@@ -12,7 +13,7 @@ export function Timeline() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Our Journey"
-          title={<>A young studio with <span className="text-gradient">big ambition</span></>}
+          title={<>A young company with <span className="text-gradient">big ambition</span></>}
           description="The VisionVerve story is just beginning — here is how it has unfolded so far."
         />
 
@@ -46,20 +47,29 @@ export function Team() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeading
           align="center"
-          eyebrow="The Team"
+          eyebrow="Leadership Team"
           title={<>The people behind <span className="text-gradient">the vision</span></>}
-          description="We are growing a collective of strategists, designers, filmmakers and engineers. These seats are filling fast."
+          description="A multidisciplinary team of founders leading VisionVerve's creativity, technology and growth."
         />
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto mt-14 grid max-w-5xl gap-6 md:grid-cols-3">
           {team.map((m, i) => (
-            <Reveal key={m.role} delay={i}>
-              <div className="group relative overflow-hidden rounded-3xl border border-border bg-card p-8 text-center">
-                <div className="mx-auto grid h-20 w-20 place-items-center rounded-full border border-dashed border-border bg-background font-display text-lg font-bold text-muted-foreground transition-colors group-hover:border-primary/50">
-                  {m.initials}
+            <Reveal key={m.name} delay={i}>
+              <div className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card p-8 text-center transition-colors hover:border-primary/40">
+                <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-primary/10 blur-3xl opacity-0 transition-opacity group-hover:opacity-100" />
+                <div className="relative mx-auto grid h-24 w-24 place-items-center rounded-full border border-border bg-background">
+                  <div className="absolute inset-0 rounded-full bg-brand-gradient opacity-10" />
+                  <Image
+                    src="/logos/favicon.png"
+                    alt=""
+                    width={48}
+                    height={48}
+                    className="relative h-12 w-12 object-contain"
+                  />
                 </div>
-                <h3 className="mt-5 font-display text-lg font-semibold">{m.name}</h3>
-                <p className="mt-1 text-sm text-secondary">{m.role}</p>
+                <h3 className="mt-6 font-display text-lg font-semibold">{m.name}</h3>
+                <p className="mt-1 text-sm font-medium text-secondary">{m.role}</p>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{m.bio}</p>
               </div>
             </Reveal>
           ))}

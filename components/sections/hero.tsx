@@ -58,7 +58,7 @@ export function Hero() {
           className="mb-6 inline-flex items-center gap-2 rounded-full border border-border px-4 py-1.5 text-xs text-muted-foreground glass"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
-          Creative Technology Agency
+          Creative Technology Company
         </motion.div>
 
         <h1 className="font-display text-[clamp(2.6rem,8vw,6.5rem)] font-bold leading-[0.95] tracking-tight text-balance">
@@ -81,8 +81,8 @@ export function Hero() {
             transition={{ delay: 1 }}
             className="max-w-md text-pretty text-base leading-relaxed text-muted-foreground"
           >
-            A creative and technology studio designing brands, products and stories that move people —
-            from first sketch to shipped experience.
+            A Creative Technology Company blending strategy, creativity, media and technology to build
+            meaningful brands, engaging digital experiences and innovative solutions that drive growth.
           </motion.p>
 
           <div className="flex h-9 items-center gap-3 font-display text-lg font-semibold">

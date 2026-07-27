@@ -1,15 +1,16 @@
 import type { Metadata } from 'next'
 import { PageHero } from '@/components/page-hero'
 import { AboutStory } from '@/components/about/story'
-import { CoreValues, Philosophy } from '@/components/about/values-philosophy'
+import { CoreValues, WhatWeBelieve } from '@/components/about/values-philosophy'
 import { Process } from '@/components/sections/process'
 import { Timeline, Team } from '@/components/about/timeline-team'
+import { Future } from '@/components/sections/future'
 import { CTA } from '@/components/sections/cta'
 
 export const metadata: Metadata = {
   title: 'About Us',
   description:
-    'Founded in 2024 in Cape Town, VisionVerve Creative is a creative technology studio uniting branding, design, film and software into one craft.',
+    'Founded in 2024 in Cape Town, VisionVerve Creative is a Creative Technology Company uniting branding, design, film and software into one craft.',
 }
 
 export default function AboutPage() {
@@ -18,15 +19,16 @@ export default function AboutPage() {
       <PageHero
         crumb="About Us"
         eyebrow="About VisionVerve"
-        title={<>We are a creative technology studio built for the <span className="text-gradient">next era of brands</span></>}
-        description="Founded in 2024 in Cape Town, VisionVerve Creative unites strategy, design, film and engineering under one roof — so ambitious brands can move faster and feel unmistakably themselves."
+        title={<>A Creative Technology Company built for the <span className="text-gradient">next era of brands</span></>}
+        description="Founded in 2024 in Cape Town, VisionVerve Creative unites strategy, design, film and engineering under one roof — because we don't just build brands, we create experiences."
       />
       <AboutStory />
       <CoreValues />
-      <Philosophy />
+      <WhatWeBelieve />
       <Process />
-      <Timeline />
       <Team />
+      <Timeline />
+      <Future />
       <CTA
         eyebrow="Join the journey"
         title="Let's create something that lasts"

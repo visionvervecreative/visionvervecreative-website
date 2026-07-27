@@ -1,51 +1,48 @@
 'use client'
 
-import Image from 'next/image'
-import { motion, useScroll, useTransform } from 'framer-motion'
-import { useRef } from 'react'
+import { motion } from 'framer-motion'
 import { Compass, Eye, Heart } from 'lucide-react'
 import { SectionHeading } from '@/components/section-heading'
 import { Reveal } from '@/components/anim/reveal'
+import { BrandComposition } from '@/components/brand-composition'
+import { valueKeywords } from '@/lib/site-data'
 
 const pillars = [
-  { icon: Compass, title: 'Mission', text: 'To fuse creativity and technology into experiences that move people and grow brands.' },
-  { icon: Eye, title: 'Vision', text: 'A world where every brand we touch feels crafted, human and unforgettable.' },
-  { icon: Heart, title: 'Values', text: 'Craft over shortcuts, honesty over hype, and partnership over transactions.' },
+  {
+    icon: Compass,
+    title: 'Mission',
+    text: 'To empower businesses with innovative creative and technology solutions that inspire growth, strengthen brands, and create lasting digital experiences. We believe every business deserves a strong identity, a compelling online presence, and technology that works beautifully.',
+  },
+  {
+    icon: Eye,
+    title: 'Vision',
+    text: "To become one of Africa's leading Creative Technology Companies, recognized globally for delivering world-class branding, digital experiences, software solutions, and innovative technologies that help businesses thrive.",
+  },
 ]
 
 export function About() {
-  const ref = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
-  const imgY = useTransform(scrollYProgress, [0, 1], ['-8%', '8%'])
-
   return (
     <section id="about" className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="About Us"
-          title={<>A studio where <span className="text-gradient">craft meets code</span></>}
-          description="VisionVerve Creative was founded on a simple belief: the best work happens when designers, storytellers and engineers build side by side. We are a collective of makers obsessed with detail and outcomes."
+          title={<>Where Vision Meets <span className="text-gradient">Creativity &amp; Technology</span></>}
+          description="VisionVerve Creative (Pty) Ltd is a Creative Technology Company founded in 2024 in Cape Town, South Africa, on a shared belief that businesses deserve more than fragmented creative services—they deserve one trusted partner capable of bringing branding, design, technology, strategy, media, and innovation together."
         />
 
         <div className="mt-14 grid items-stretch gap-8 lg:grid-cols-2">
-          <div ref={ref} className="relative overflow-hidden rounded-3xl border border-border">
-            <motion.div style={{ y: imgY }} className="relative h-full min-h-80">
-              <Image
-                src="/images/studio.png"
-                alt="VisionVerve Creative studio at work"
-                fill
-                className="scale-110 object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </motion.div>
-            <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-            <div className="absolute bottom-6 left-6 flex items-center gap-3">
-              <Image src="/logos/favicon.png" alt="" width={36} height={36} className="h-9 w-9 object-contain" />
-              <p className="font-display text-sm font-semibold">Est. 2024 · Cape Town · Remote-friendly</p>
-            </div>
+          <div className="relative min-h-96 overflow-hidden rounded-3xl border border-border">
+            <BrandComposition caption="Founded 2024 • Cape Town, South Africa • Creating Experiences Worldwide" />
           </div>
 
           <div className="flex flex-col gap-4">
+            <p className="text-pretty leading-relaxed text-muted-foreground">
+              Too often, businesses are forced to work with multiple companies to build their digital presence.
+              We created VisionVerve to simplify that journey by combining creativity, technology, and strategic
+              thinking under one roof. Every project is designed to help businesses grow, connect with their
+              audiences, and stand out through meaningful digital experiences.
+            </p>
+
             {pillars.map((p, i) => (
               <Reveal key={p.title} delay={i}>
                 <div className="group flex gap-5 rounded-3xl border border-border bg-card p-6 transition-colors hover:border-primary/40">
@@ -59,6 +56,32 @@ export function About() {
                 </div>
               </Reveal>
             ))}
+
+            <Reveal delay={2}>
+              <div className="group rounded-3xl border border-border bg-card p-6 transition-colors hover:border-primary/40">
+                <div className="flex gap-5">
+                  <div className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-brand-gradient text-white">
+                    <Heart className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-lg font-semibold">Our Values</h3>
+                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                      These values shape every decision we make and every experience we create.
+                    </p>
+                  </div>
+                </div>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {valueKeywords.map((v) => (
+                    <span
+                      key={v}
+                      className="rounded-full border border-border bg-background px-3 py-1 text-xs font-medium text-foreground/80"
+                    >
+                      {v}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
           </div>
         </div>
       </div>

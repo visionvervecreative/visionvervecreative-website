@@ -21,9 +21,9 @@ export const metadata: Metadata = {
     template: '%s | VisionVerve Creative',
   },
   description:
-    'VisionVerve Creative is a premium creative technology agency crafting brands, websites, software, photography and film that move people.',
+    'VisionVerve Creative is a Creative Technology Company crafting brands, websites, software, photography and film that move people.',
   keywords: [
-    'creative agency',
+    'creative technology company',
     'branding',
     'web development',
     'software development',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'VisionVerve Creative — We Create Experiences',
     description:
-      'Premium creative technology agency crafting brands, websites, software, photography and film.',
+      'A Creative Technology Company crafting brands, websites, software, photography and film.',
     url: siteUrl,
     siteName: 'VisionVerve Creative',
     type: 'website',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'VisionVerve Creative — We Create Experiences',
     description:
-      'Premium creative technology agency crafting brands, websites, software, photography and film.',
+      'A Creative Technology Company crafting brands, websites, software, photography and film.',
   },
   icons: {
     icon: '/logos/favicon.png',

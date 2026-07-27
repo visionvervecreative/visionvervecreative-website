@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { ArrowUpRight, Play, MousePointerClick } from 'lucide-react'
+import { ArrowUpRight, Play, Users, Award, Globe, Code2, HeartHandshake, type LucideIcon } from 'lucide-react'
 import { heroServices, stats } from '@/lib/site-data'
 import { Particles } from '@/components/anim/particles'
 import { Magnetic } from '@/components/anim/magnetic'
@@ -11,6 +11,9 @@ import { CountUp } from '@/components/anim/count-up'
 
 const headline = ['We', 'Don’t', 'Just', 'Build', 'Brands.']
 const headline2 = ['We', 'Create', 'Experiences.']
+
+// Subtle monochrome line icons, one per statistic (matches the stats data order)
+const statIcons: LucideIcon[] = [Users, Award, Globe, Code2, HeartHandshake]
 
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null)
@@ -28,7 +31,7 @@ export function Hero() {
   }, [])
 
   return (
-    <section id="home" ref={ref} className="relative flex min-h-svh items-center overflow-hidden">
+    <section id="home" ref={ref} className="relative flex min-h-[86svh] items-center overflow-hidden">
       {/* Cinematic animated background */}
       <motion.div style={{ scale }} className="absolute inset-0 -z-10 will-change-transform [transform:translateZ(0)]">
         <div className="absolute inset-0 bg-background" />
@@ -52,7 +55,7 @@ export function Hero() {
         <div className="noise absolute inset-0 opacity-[0.12]" />
       </motion.div>
 
-      <motion.div style={{ y, opacity }} className="mx-auto w-full max-w-7xl px-4 pb-16 pt-28 will-change-transform [transform:translateZ(0)] sm:px-6">
+      <motion.div style={{ y, opacity }} className="mx-auto w-full max-w-7xl px-4 pb-10 pt-28 will-change-transform [transform:translateZ(0)] sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -76,7 +79,7 @@ export function Hero() {
           </span>
         </h1>
 
-        <div className="mt-8 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div className="mt-6 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -108,7 +111,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.1 }}
-          className="mt-10 flex flex-wrap items-center gap-4"
+          className="mt-8 flex flex-wrap items-center gap-4"
         >
           <Magnetic>
             <Link
@@ -124,9 +127,9 @@ export function Hero() {
             <Link
               href="/contact"
               data-cursor="Book"
-              className="group inline-flex items-center gap-2 rounded-full border border-border px-7 py-4 text-sm font-semibold text-foreground transition-colors hover:bg-card"
+              className="group inline-flex items-center gap-2 rounded-full border border-foreground/20 bg-card/60 px-7 py-4 text-sm font-semibold text-foreground backdrop-blur-sm transition-all hover:border-foreground/40 hover:bg-card hover:shadow-lg"
             >
-              <Play className="h-4 w-4 text-secondary" />
+              <Play className="h-4 w-4 text-secondary transition-transform group-hover:scale-110" />
               Book Discovery Call
             </Link>
           </Magnetic>
@@ -136,25 +139,24 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.3 }}
-          className="mt-16 grid max-w-3xl grid-cols-2 gap-6 border-t border-border pt-8 sm:grid-cols-4"
+          className="mt-10 grid grid-cols-2 gap-3 border-t border-border pt-8 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5"
         >
-          {stats.map((s) => (
-            <div key={s.label}>
-              <dd className="font-display text-3xl font-bold sm:text-4xl">
-                <CountUp to={s.value} suffix={s.suffix} />
-              </dd>
-              <dt className="mt-1 text-xs text-muted-foreground">{s.label}</dt>
-            </div>
-          ))}
+          {stats.map((s, i) => {
+            const Icon = statIcons[i] ?? Users
+            return (
+              <div
+                key={s.label}
+                className="group rounded-2xl border border-transparent p-3 transition-colors duration-300 hover:border-border hover:bg-card/50"
+              >
+                <Icon className="h-4 w-4 text-muted-foreground/60 transition-colors group-hover:text-primary" strokeWidth={1.5} />
+                <dd className="mt-3 font-display text-3xl font-bold leading-none sm:text-4xl">
+                  <CountUp to={s.value} suffix={s.suffix} startOnMount />
+                </dd>
+                <dt className="mt-2 text-xs leading-snug text-muted-foreground">{s.label}</dt>
+              </div>
+            )
+          })}
         </motion.dl>
-      </motion.div>
-
-      <motion.div
-        style={{ opacity }}
-        className="pointer-events-none absolute bottom-6 left-1/2 hidden -translate-x-1/2 items-center gap-2 text-xs text-muted-foreground md:flex"
-      >
-        <MousePointerClick className="h-4 w-4" />
-        <span>Scroll to explore</span>
       </motion.div>
     </section>
   )

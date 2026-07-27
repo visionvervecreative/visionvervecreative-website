@@ -3,9 +3,22 @@
 import { useEffect, useRef, useState } from 'react'
 import { useInView } from 'framer-motion'
 
-export function CountUp({ to, suffix = '', duration = 1800 }: { to: number; suffix?: string; duration?: number }) {
+export function CountUp({
+  to,
+  suffix = '',
+  duration = 1800,
+  startOnMount = false,
+}: {
+  to: number
+  suffix?: string
+  duration?: number
+  /** Start counting as soon as the component mounts, regardless of scroll position.
+   *  Use for above-the-fold stats that may sit just below a short viewport's fold. */
+  startOnMount?: boolean
+}) {
   const ref = useRef<HTMLSpanElement>(null)
-  const inView = useInView(ref, { once: true, margin: '-60px' })
+  const inViewOnly = useInView(ref, { once: true, margin: '-60px' })
+  const inView = startOnMount || inViewOnly
   const [value, setValue] = useState(0)
 
   useEffect(() => {

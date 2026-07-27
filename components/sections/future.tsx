@@ -20,6 +20,14 @@ const tierDot: Record<string, string> = {
   vision: 'bg-primary',
 }
 
+// Roadmap reads as a progression: what we run today → what we're building → what's next.
+const tierOrder: Record<string, number> = { now: 0, building: 1, vision: 2 }
+const phases = [
+  { tier: 'now', label: 'Live Now', text: 'Solutions delivering value today' },
+  { tier: 'building', label: 'In Progress', text: 'Actively building and scaling' },
+  { tier: 'vision', label: 'On the Horizon', text: "The ecosystem we're growing toward" },
+] as const
+
 export function Future() {
   return (
     <section className="relative overflow-hidden py-24 sm:py-32">
@@ -78,10 +86,33 @@ export function Future() {
             </div>
           </Reveal>
 
-          {/* Pillar grid — layered glass panels */}
+          {/* Roadmap phase legend */}
+          <Reveal>
+            <div className="mb-10 grid gap-3 sm:grid-cols-3">
+              {phases.map((phase, i) => (
+                <div
+                  key={phase.tier}
+                  className="relative flex items-center gap-3 rounded-2xl border border-border bg-card/40 px-4 py-3 backdrop-blur-sm"
+                >
+                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-border font-display text-xs font-bold text-muted-foreground">
+                    {i + 1}
+                  </span>
+                  <span className={`h-2 w-2 shrink-0 rounded-full ${tierDot[phase.tier]}`} />
+                  <div className="min-w-0">
+                    <p className="font-display text-sm font-semibold leading-none">{phase.label}</p>
+                    <p className="mt-1 truncate text-xs text-muted-foreground">{phase.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+
+          {/* Pillar grid — layered glass panels, ordered as a roadmap progression */}
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {ecosystemPillars.map((pillar, i) => {
-              const Icon = icons[i]
+            {[...ecosystemPillars]
+              .map((pillar, i) => ({ pillar, Icon: icons[i] }))
+              .sort((a, b) => tierOrder[a.pillar.tier] - tierOrder[b.pillar.tier])
+              .map(({ pillar, Icon }, i) => {
               const spanClass = i % 5 === 0 ? 'lg:col-span-2' : ''
               return (
                 <motion.article

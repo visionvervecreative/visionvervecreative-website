@@ -5,6 +5,10 @@ import {
   Sparkles,
   Code2,
   Cpu,
+  Globe,
+  BrainCircuit,
+  Palette,
+  Network,
   type LucideIcon,
 } from 'lucide-react'
 
@@ -84,54 +88,76 @@ export const whyChoose = [
 ]
 
 export type Service = {
+  /** URL slug for the dedicated service page at /services/{slug} */
+  slug: string
   icon: LucideIcon
   title: string
   description: string
   points: string[]
 }
 
+/**
+ * VisionVerve's core service offerings.
+ * Scalable by design — add a new entry here (with a unique `slug`) and it
+ * automatically appears in the Services section and gets its own page at
+ * /services/{slug}. No layout changes required as the company grows.
+ */
 export const services: Service[] = [
   {
-    icon: Code2,
-    title: 'Website Development',
+    slug: 'brand-identity',
+    icon: Sparkles,
+    title: 'Brand Identity & Strategy',
     description:
-      'Fast, accessible, conversion-focused websites built on modern frameworks and headless architecture.',
-    points: ['Next.js & Headless', 'Web Performance', 'CMS Integration'],
+      'Helping businesses define who they are through strategic brand positioning, visual identity systems, logo design, and messaging that creates lasting recognition.',
+    points: ['Brand Strategy', 'Logo Design', 'Brand Identity', 'Brand Guidelines'],
   },
   {
-    icon: Cpu,
+    slug: 'website-development',
+    icon: Globe,
+    title: 'Website Design & Development',
+    description:
+      'Modern, responsive, high-performance websites built to strengthen your online presence, generate leads, and create exceptional user experiences.',
+    points: ['Business Websites', 'E-Commerce', 'CMS', 'SEO Ready'],
+  },
+  {
+    slug: 'software-development',
+    icon: Code2,
     title: 'Software Development',
     description:
-      'Custom platforms, dashboards and automation engineered to scale with your ambitions.',
-    points: ['Web Apps', 'APIs & Automation', 'Cloud Native'],
+      'Custom software, business systems, dashboards, web applications, and automation solutions designed to solve real business problems and improve efficiency.',
+    points: ['Web Applications', 'Business Systems', 'Automation', 'APIs'],
   },
   {
-    icon: Sparkles,
-    title: 'Branding',
+    slug: 'ai-solutions',
+    icon: BrainCircuit,
+    title: 'Artificial Intelligence Solutions',
     description:
-      'Distinct identities and strategy that make audiences feel something and remember you.',
-    points: ['Brand Strategy', 'Identity Systems', 'Guidelines'],
+      'Helping businesses leverage AI to automate workflows, improve customer experiences, generate insights, and unlock new opportunities.',
+    points: ['AI Integration', 'Automation', 'Intelligent Workflows', 'AI Consulting'],
   },
   {
-    icon: PenTool,
-    title: 'Graphic Design',
-    description:
-      'Editorial-grade visual design across print and digital that elevates every touchpoint.',
-    points: ['Art Direction', 'Print & Digital', 'Motion Graphics'],
-  },
-  {
+    slug: 'creative-media',
     icon: Camera,
-    title: 'Photography',
+    title: 'Creative Media Production',
     description:
-      'Cinematic product, lifestyle and campaign photography with a signature look.',
-    points: ['Product', 'Lifestyle', 'Campaign'],
+      'Professional photography, videography, and visual storytelling that strengthens brands and creates memorable customer experiences.',
+    points: ['Photography', 'Videography', 'Drone Content', 'Content Creation'],
   },
   {
-    icon: Video,
-    title: 'Videography',
+    slug: 'graphic-design',
+    icon: Palette,
+    title: 'Graphic Design & Marketing Assets',
     description:
-      'Story-driven films, commercials and social content that stop the scroll.',
-    points: ['Commercials', 'Brand Films', 'Social Content'],
+      'Creative marketing materials designed to communicate clearly, strengthen brand recognition, and support business growth across digital and print platforms.',
+    points: ['Social Media Design', 'Print Design', 'Marketing Collateral', 'Advertising'],
+  },
+  {
+    slug: 'digital-transformation',
+    icon: Network,
+    title: 'Digital Transformation',
+    description:
+      'Helping organizations modernize processes, embrace technology, and improve the way they operate through innovative digital solutions.',
+    points: ['Digital Strategy', 'Process Optimization', 'Technology Consulting', 'Business Innovation'],
   },
 ]
 

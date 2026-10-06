@@ -2,9 +2,9 @@ import { Hero } from '@/components/sections/hero'
 import { ClientsMarquee } from '@/components/sections/clients-marquee'
 import { About } from '@/components/sections/about'
 import { WhyChoose } from '@/components/sections/why-choose'
-import { Future } from '@/components/sections/future'
 import { ServicesPreview } from '@/components/sections/services-preview'
 import { CreativeUniverse } from '@/components/sections/creative-universe'
+import { Capabilities, ExperiencesInMotion, OnePartner, AVLiveVisualisation, Vision2030 } from '@/components/sections/capabilities'
 import { FeaturedProjects } from '@/components/sections/featured-projects'
 import { Testimonials } from '@/components/sections/testimonials'
 import { Blog } from '@/components/sections/blog'
@@ -16,10 +16,14 @@ export default function Home() {
       <Hero />
       <ClientsMarquee />
       <About />
+      <Capabilities />
       <WhyChoose />
-      <Future />
       <ServicesPreview />
+      <ExperiencesInMotion />
+      <AVLiveVisualisation />
       <CreativeUniverse />
+      <OnePartner />
+      <Vision2030 />
       <FeaturedProjects />
       <Testimonials />
       <Blog />

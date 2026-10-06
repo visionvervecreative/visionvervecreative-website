@@ -24,7 +24,7 @@ const process = [
 
 export function HomeHero() {
   return (
-    <section className="relative flex min-h-[92svh] items-end overflow-hidden border-b border-border px-4 pb-14 pt-32 sm:px-6 sm:pb-20">
+    <section id="home" className="relative flex min-h-[92svh] items-end overflow-hidden border-b border-border px-4 pb-14 pt-32 sm:px-6 sm:pb-20">
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute left-[12%] top-[14%] h-72 w-72 rounded-full bg-primary/25 blur-[120px]" />
         <div className="absolute right-[4%] top-[35%] h-96 w-96 rounded-full bg-secondary/20 blur-[150px]" />
@@ -51,8 +51,8 @@ export function HomeHero() {
 export function CapabilityExperience() {
   const [open, setOpen] = useState(0)
   return (
-    <section id="capabilities" className="relative py-24 sm:py-36">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+    <section id="divisions" className="relative py-24 sm:py-36">
+      <div id="capabilities" className="mx-auto max-w-7xl scroll-mt-20 px-4 sm:px-6">
         <div className="mb-14 flex flex-col justify-between gap-5 border-b border-border pb-8 sm:flex-row sm:items-end">
           <div><p className="mb-4 text-xs uppercase tracking-[0.3em] text-primary">02 / Capabilities</p><h2 className="font-display text-5xl font-semibold tracking-tight sm:text-7xl">What we do.</h2></div>
           <p className="max-w-sm text-sm leading-7 text-muted-foreground">Four connected disciplines. One team capable of taking an idea from concept to execution.</p>

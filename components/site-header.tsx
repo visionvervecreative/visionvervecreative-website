@@ -82,7 +82,7 @@ export function SiteHeader() {
               data-cursor="Let's talk"
               className="group inline-flex items-center gap-2 rounded-full bg-brand-gradient px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary/20"
             >
-              Let&apos;s Build Something
+              Start a Project
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
           </Magnetic>
@@ -137,7 +137,7 @@ export function SiteHeader() {
                 onClick={() => setOpen(false)}
                 className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-gradient px-5 py-3.5 text-base font-semibold text-white"
               >
-                Let&apos;s Build Something
+                Start a Project
                 <ArrowUpRight className="h-4 w-4" />
               </Link>
             </nav>

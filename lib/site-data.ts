@@ -14,11 +14,9 @@ import {
 
 export const navLinks = [
   { label: 'Home', href: '/' },
+  { label: 'Capabilities', href: '/#capabilities' },
+  { label: 'Work', href: '/portfolio' },
   { label: 'About', href: '/about' },
-  { label: 'Services', href: '/services' },
-  { label: 'Portfolio', href: '/portfolio' },
-  { label: 'Case Studies', href: '/case-studies' },
-  { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' },
 ]
 

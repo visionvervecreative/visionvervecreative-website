@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react'
-import { navLinks, services, company } from '@/lib/site-data'
+import { navLinks, company } from '@/lib/site-data'
 
 export function SiteFooter() {
   return (
@@ -19,25 +19,9 @@ export function SiteFooter() {
             <p className="mt-4 max-w-xs text-sm text-muted-foreground leading-relaxed">
               A Creative Technology Company in Cape Town crafting brands, films and software that move people. We don&apos;t just build brands—we create experiences.
             </p>
-            <div className="mt-5 flex flex-wrap gap-2">
-              {company.socials.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  className="rounded-full border border-border px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:border-primary/40 hover:text-foreground"
-                >
-                  {s.label}
-                </a>
-              ))}
-            </div>
           </div>
 
           <FooterCol title="Navigate" links={navLinks} />
-          <FooterCol
-            title="Services"
-            links={services.map((s) => ({ label: s.title, href: '/services' }))}
-          />
-
           <div>
             <h4 className="text-sm font-semibold">Get in touch</h4>
             <ul className="mt-4 space-y-3 text-sm text-muted-foreground">

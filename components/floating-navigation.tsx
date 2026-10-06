@@ -44,7 +44,7 @@ export function FloatingNavigation() {
       <aside className="fixed right-5 top-1/2 z-[90] hidden -translate-y-1/2 lg:block" aria-label="Section navigation">
         <motion.div
           layout
-          className="glass flex flex-col items-center gap-1 rounded-2xl border border-border/80 p-1.5 shadow-2xl shadow-black/20"
+          className="flex flex-col items-center gap-1 rounded-xl border border-border/60 bg-background/75 p-1.5 shadow-xl shadow-black/10 backdrop-blur-xl"
           onMouseEnter={() => setExpanded(true)}
           onMouseLeave={() => setExpanded(false)}
         >
@@ -75,7 +75,7 @@ export function FloatingNavigation() {
       <div className="fixed bottom-5 right-5 z-[90] lg:hidden">
         <AnimatePresence>
           {expanded && (
-            <motion.div initial={{ opacity: 0, y: 12, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 12, scale: 0.96 }} className="glass mb-3 flex flex-col gap-1 rounded-2xl border border-border p-2 shadow-2xl">
+            <motion.div initial={{ opacity: 0, y: 12, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 12, scale: 0.96 }} className="mb-3 flex flex-col gap-1 rounded-xl border border-border/60 bg-background/90 p-2 shadow-xl backdrop-blur-xl">
               {items.map(({ id, label }) => (
                 <button key={id} type="button" onClick={() => jump(id)} className={`rounded-xl px-4 py-2 text-left text-sm ${active === id ? 'bg-primary/15 text-foreground' : 'text-muted-foreground'}`}>
                   {label}

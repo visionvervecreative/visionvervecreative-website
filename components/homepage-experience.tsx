@@ -32,7 +32,7 @@ export function HomeHero() {
       <div className="relative mx-auto flex w-full max-w-[1500px] flex-col justify-between">
         <div>
           <div className="mb-6 flex items-center gap-4 sm:mb-8"><span className="h-px w-12 bg-primary" /><span className="font-mono text-[10px] uppercase tracking-[.26em] text-white/45">A Creative Technology &amp; Experiences Company</span></div>
-          <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, ease: 'easeOut' }} className="max-w-[1100px] font-display text-[clamp(3.6rem,6.8vw,8rem)] font-bold leading-[.82] tracking-[-.075em]">
+          <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, ease: 'easeOut' }} className="max-w-[1100px] font-display text-[clamp(72px,6.7vw,128px)] font-extrabold leading-[.92] tracking-[-.05em]">
             <span className="block">We don&apos;t just</span>
             <span className="block">build brands.</span>
             <span className="block text-white/45">We create</span>

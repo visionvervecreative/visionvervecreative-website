@@ -48,7 +48,7 @@ export function WhatWeBelieve() {
           align="center"
           eyebrow="What We Believe"
           title={<>The convictions <span className="text-gradient">behind our work</span></>}
-          description="We Don't Just Build Brands. We Create Experiences—guided by a set of beliefs that shape everything we do."
+          description="We don't just build brands. We create experiences—guided by a set of beliefs that shape everything we do."
         />
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

@@ -33,9 +33,9 @@ export function HomeHero() {
         <div>
           <div className="mb-6 flex items-center gap-4 sm:mb-8"><span className="h-px w-12 bg-primary" /><span className="font-mono text-[10px] uppercase tracking-[.26em] text-white/45">A Creative Technology &amp; Experiences Company</span></div>
           <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, ease: 'easeOut' }} className="max-w-[1100px] whitespace-nowrap font-sans text-[clamp(72px,6.7vw,128px)] font-extrabold leading-[0.92] tracking-[-0.05em]">
-            <span className="block text-[#F5F3F7]">We don&apos;t just</span>
-            <span className="block text-[#F5F3F7]">build brands.</span>
-            <span className="text-gradient block" style={{ backgroundImage: 'var(--brand-gradient)', backgroundClip: 'text', WebkitBackgroundClip: 'text', color: 'transparent' }}>We create experiences.</span>
+            <span className="block text-[#F5F3F7]">We Don&apos;t Just</span>
+            <span className="block text-[#F5F3F7]">Build Brands.</span>
+            <span className="text-gradient block" style={{ backgroundImage: 'var(--brand-gradient)', backgroundClip: 'text', WebkitBackgroundClip: 'text', color: 'transparent' }}>We Create Experiences.</span>
           </motion.h1>
           <div className="mt-4 max-w-[590px] sm:mt-6"><p className="text-sm leading-7 text-white/55 sm:text-base">VisionVerve is a Creative Technology &amp; Experiences Company combining creativity, digital technology, audiovisual production and event production to bring ambitious ideas to life.</p><div className="mt-7 flex flex-wrap gap-7"><Link href="#contact" className="group inline-flex items-center gap-2 text-sm font-semibold">Start a project <ArrowUpRight className="h-4 w-4 text-primary transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" /></Link><Link href="#work" className="inline-flex items-center gap-2 text-sm text-white/55 transition-colors hover:text-white">See selected work <ArrowDownRight className="h-4 w-4" /></Link></div></div>
         </div>

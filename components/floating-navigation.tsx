@@ -44,7 +44,7 @@ export function FloatingNavigation() {
       <aside className="fixed right-5 top-1/2 z-[90] hidden -translate-y-1/2 lg:block" aria-label="Section navigation">
         <motion.div
           layout
-          className="flex flex-col items-center gap-1 rounded-xl border border-border/60 bg-background/75 p-1.5 shadow-xl shadow-black/10 backdrop-blur-xl"
+          className="flex flex-col items-center gap-1 rounded-xl border border-white/[0.08] bg-[rgba(10,8,15,0.60)] p-1.5 shadow-xl shadow-black/20 backdrop-blur-[18px] [-webkit-backdrop-filter:blur(18px)]"
           onMouseEnter={() => setExpanded(true)}
           onMouseLeave={() => setExpanded(false)}
         >

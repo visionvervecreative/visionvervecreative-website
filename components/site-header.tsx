@@ -18,8 +18,8 @@ export function SiteHeader() {
   }, [])
 
   return (
-    <header className="pointer-events-none fixed inset-x-0 top-0 z-[100] px-2 pt-2 sm:px-4 sm:pt-3">
-      <div className={`pointer-events-auto mx-auto flex max-w-[1500px] items-center justify-between rounded-xl px-3 py-2.5 transition-all duration-300 ease-out sm:px-5 sm:py-3 ${scrolled ? 'border border-white/10 bg-[#0c0b10]/75 shadow-xl shadow-black/20 backdrop-blur-[18px] [-webkit-backdrop-filter:blur(18px)]' : 'border border-transparent bg-transparent'}`}>
+    <header className="pointer-events-none fixed inset-x-0 top-0 z-[100] px-8 pt-6 sm:px-10 sm:pt-8 lg:px-16">
+      <div className={`pointer-events-auto mx-auto flex max-w-[1500px] items-center justify-between rounded-xl px-0 py-0 transition-all duration-300 ease-out ${scrolled ? 'rounded-xl border border-white/[0.08] bg-[rgba(10,8,15,0.68)] px-4 py-3 shadow-[0_10px_40px_rgba(0,0,0,0.20)] backdrop-blur-[20px] [-webkit-backdrop-filter:blur(20px)] sm:px-5' : 'border border-transparent bg-transparent'}`}>
         <Link href="/" className="pointer-events-auto flex items-center gap-2" aria-label="VisionVerve Creative home">
           <motion.span whileHover={{ rotate: -8, scale: 1.08 }} transition={{ type: 'spring', stiffness: 300, damping: 15 }} className="inline-block">
             <Image src="/logos/main.png" alt="VisionVerve Creative" width={150} height={42} className="h-8 w-auto object-contain sm:h-9" />

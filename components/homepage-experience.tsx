@@ -22,7 +22,7 @@ const process = [
 
 export function HomeHero() {
   return (
-    <section id="home" className="relative flex min-h-[100svh] overflow-hidden border-b border-white/10 bg-[#0c0b10] px-4 pb-12 pt-32 text-white sm:px-8 sm:pb-16 sm:pt-40 lg:px-12">
+    <section id="home" className="relative flex min-h-[100svh] overflow-hidden border-b border-white/10 bg-[#0c0b10] px-[clamp(32px,5vw,80px)] pb-8 pt-20 text-white sm:pb-12 sm:pt-24">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -left-32 top-1/3 h-[32rem] w-[32rem] rounded-full bg-primary/10 blur-[140px]" />
         <div className="absolute right-[-10rem] top-[-8rem] h-[28rem] w-[28rem] rounded-full bg-secondary/10 blur-[150px]" />
@@ -31,14 +31,14 @@ export function HomeHero() {
       </div>
       <div className="relative mx-auto flex w-full max-w-[1500px] flex-col justify-between">
         <div>
-          <div className="mb-10 flex items-center gap-4 sm:mb-14"><span className="h-px w-12 bg-primary" /><span className="font-mono text-[10px] uppercase tracking-[.26em] text-white/45">A Creative Technology &amp; Experiences Company</span></div>
-          <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, ease: 'easeOut' }} className="max-w-[1100px] font-display text-[clamp(4rem,8.2vw,8.8rem)] font-bold leading-[.86] tracking-[-.075em]">
+          <div className="mb-6 flex items-center gap-4 sm:mb-8"><span className="h-px w-12 bg-primary" /><span className="font-mono text-[10px] uppercase tracking-[.26em] text-white/45">A Creative Technology &amp; Experiences Company</span></div>
+          <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, ease: 'easeOut' }} className="max-w-[1100px] font-display text-[clamp(3.6rem,6.8vw,8rem)] font-bold leading-[.82] tracking-[-.075em]">
             <span className="block">We don&apos;t just</span>
             <span className="block">build brands.</span>
             <span className="block text-white/45">We create</span>
-            <span className="text-gradient block">experiences.</span>
+            <span className="text-gradient block" style={{ backgroundImage: 'var(--brand-gradient)' }}>experiences.</span>
           </motion.h1>
-          <div className="mt-10 max-w-[590px] sm:mt-14"><p className="text-sm leading-7 text-white/55 sm:text-base">VisionVerve is a Creative Technology &amp; Experiences Company combining creativity, digital technology, audiovisual production and event production to bring ambitious ideas to life.</p><div className="mt-7 flex flex-wrap gap-7"><Link href="#contact" className="group inline-flex items-center gap-2 text-sm font-semibold">Start a project <ArrowUpRight className="h-4 w-4 text-primary transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" /></Link><Link href="#work" className="inline-flex items-center gap-2 text-sm text-white/55 transition-colors hover:text-white">See selected work <ArrowDownRight className="h-4 w-4" /></Link></div></div>
+          <div className="mt-4 max-w-[590px] sm:mt-6"><p className="text-sm leading-7 text-white/55 sm:text-base">VisionVerve is a Creative Technology &amp; Experiences Company combining creativity, digital technology, audiovisual production and event production to bring ambitious ideas to life.</p><div className="mt-7 flex flex-wrap gap-7"><Link href="#contact" className="group inline-flex items-center gap-2 text-sm font-semibold">Start a project <ArrowUpRight className="h-4 w-4 text-primary transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" /></Link><Link href="#work" className="inline-flex items-center gap-2 text-sm text-white/55 transition-colors hover:text-white">See selected work <ArrowDownRight className="h-4 w-4" /></Link></div></div>
         </div>
         <div className="mt-16 flex items-end justify-between gap-6 font-mono text-[10px] uppercase tracking-[.22em] text-white/40 sm:mt-20"><span>Creative / Technology / AV / Production</span><span className="text-right">Cape Town, ZA</span></div>
       </div>

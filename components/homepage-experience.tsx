@@ -1,8 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { useRef, useState, type PointerEvent } from 'react'
-import { AnimatePresence, motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
+import { useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowDownRight, ArrowUpRight, Mail, Plus } from 'lucide-react'
 import { projects } from '@/lib/site-data'
 
@@ -20,65 +20,27 @@ const process = [
   ['04', 'Produce', 'Bring the experience to life.'],
 ]
 
-function HeroArtwork() {
-  const panelRef = useRef<HTMLDivElement>(null)
-  const pointerX = useMotionValue(0)
-  const pointerY = useMotionValue(0)
-  const smoothX = useSpring(pointerX, { stiffness: 90, damping: 20 })
-  const smoothY = useSpring(pointerY, { stiffness: 90, damping: 20 })
-  const orbitX = useTransform(smoothX, [-1, 1], [-10, 10])
-  const orbitY = useTransform(smoothY, [-1, 1], [-8, 8])
-
-  function handlePointerMove(event: PointerEvent<HTMLDivElement>) {
-    if (!panelRef.current) return
-    const bounds = panelRef.current.getBoundingClientRect()
-    pointerX.set((event.clientX - bounds.left) / bounds.width * 2 - 1)
-    pointerY.set((event.clientY - bounds.top) / bounds.height * 2 - 1)
-  }
-
-  function resetPointer() {
-    pointerX.set(0)
-    pointerY.set(0)
-  }
-
-  return (
-    <motion.div
-      ref={panelRef}
-      onPointerMove={handlePointerMove}
-      onPointerLeave={resetPointer}
-      className="group relative min-h-[340px] overflow-hidden border border-white/15 bg-[#111016] sm:min-h-[470px]"
-      initial={{ opacity: 0, y: 18 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-    >
-      <div className="absolute inset-0 opacity-80 [background-image:linear-gradient(rgba(255,255,255,.055)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.055)_1px,transparent_1px)] [background-size:48px_48px]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_28%,rgba(246,139,74,.26),transparent_26%),radial-gradient(circle_at_36%_68%,rgba(180,100,255,.2),transparent_32%)]" />
-      <motion.div style={{ x: orbitX, y: orbitY }} className="absolute -right-24 top-10 h-72 w-72 rounded-full border border-orange-200/30 sm:h-96 sm:w-96" />
-      <motion.div style={{ x: orbitX, y: orbitY }} className="absolute -right-8 top-28 h-56 w-56 rounded-full border border-primary/40 sm:h-72 sm:w-72" />
-      <div className="absolute left-10 top-12 h-1/2 w-px bg-white/20" />
-      <div className="absolute bottom-16 left-10 right-10 h-px bg-white/15" />
-      <div className="absolute bottom-0 left-1/2 h-[82%] w-px origin-bottom -rotate-[22deg] bg-gradient-to-t from-orange-300/80 to-transparent" />
-      <div className="absolute left-[24%] top-[42%] h-24 w-24 rounded-full border border-orange-200/40 bg-orange-200/10 blur-[1px]" />
-      <motion.div className="absolute left-[24%] top-[42%] h-2 w-2 rounded-full bg-orange-100 shadow-[0_0_30px_8px_rgba(255,180,100,.7)]" animate={{ scale: [1, 1.8, 1], opacity: [0.6, 1, 0.6] }} transition={{ duration: 3, repeat: Infinity }} />
-      <div className="absolute left-5 top-5 font-mono text-[9px] uppercase tracking-[.2em] text-white/45">VV / experience system</div>
-      <div className="absolute right-5 top-5 flex items-center gap-2 font-mono text-[9px] uppercase tracking-[.2em] text-emerald-200/70"><i className="h-1.5 w-1.5 rounded-full bg-emerald-300" /> live signal</div>
-      <div className="absolute inset-0 grid place-items-center"><span className="font-display text-7xl font-semibold tracking-[-.12em] text-white/10 sm:text-9xl">VV</span></div>
-      <div className="absolute bottom-5 left-5 right-5 flex justify-between font-mono text-[9px] uppercase tracking-[.2em] text-white/50"><span>creative + technology</span><span>cape town / za</span></div>
-    </motion.div>
-  )
-}
-
 export function HomeHero() {
   return (
-    <section id="home" className="relative overflow-hidden border-b border-border bg-[#f4f1ec] px-4 pb-12 pt-24 text-[#17151b] dark:bg-[#0c0b10] dark:text-white sm:px-8 sm:pb-16 sm:pt-28 lg:px-12">
-      <div className="mx-auto grid max-w-[1500px] gap-12 md:grid-cols-[1.02fr_.98fr] md:items-end lg:gap-20">
+    <section id="home" className="relative flex min-h-[100svh] overflow-hidden border-b border-white/10 bg-[#0c0b10] px-4 pb-12 pt-32 text-white sm:px-8 sm:pb-16 sm:pt-40 lg:px-12">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -left-32 top-1/3 h-[32rem] w-[32rem] rounded-full bg-primary/10 blur-[140px]" />
+        <div className="absolute right-[-10rem] top-[-8rem] h-[28rem] w-[28rem] rounded-full bg-secondary/10 blur-[150px]" />
+        <div className="absolute bottom-[-12rem] right-1/4 h-[26rem] w-[26rem] rounded-full bg-accent/10 blur-[150px]" />
+        <div className="absolute inset-0 opacity-25 [background-image:linear-gradient(rgba(255,255,255,.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.035)_1px,transparent_1px)] [background-size:72px_72px]" />
+      </div>
+      <div className="relative mx-auto flex w-full max-w-[1500px] flex-col justify-between">
         <div>
-          <div className="mb-12 flex items-center gap-4"><span className="h-px w-14 bg-primary" /><span className="font-mono text-[10px] uppercase tracking-[.24em] text-muted-foreground">01 / VisionVerve</span></div>
-          <p className="mb-4 max-w-sm text-sm text-muted-foreground">A creative technology company from Cape Town, building the things people remember.</p>
-          <h1 className="max-w-3xl font-display text-[clamp(2.8rem,5.9vw,6.5rem)] font-semibold leading-[.91] tracking-[-.065em]">We don&apos;t just<br />build brands.<br /><span className="text-foreground/40">We create</span><br /><span className="text-gradient">experiences.</span></h1>
-          <div className="mt-10 flex flex-wrap gap-7 border-t border-border pt-6"><Link href="#divisions" className="group inline-flex items-center gap-3 text-sm font-semibold">Start a project <ArrowDownRight className="h-4 w-4 text-primary transition-transform group-hover:translate-x-1 group-hover:translate-y-1" /></Link><Link href="#work" className="text-sm text-muted-foreground transition-colors hover:text-foreground">See selected work</Link></div>
+          <div className="mb-10 flex items-center gap-4 sm:mb-14"><span className="h-px w-12 bg-primary" /><span className="font-mono text-[10px] uppercase tracking-[.26em] text-white/45">A Creative Technology &amp; Experiences Company</span></div>
+          <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, ease: 'easeOut' }} className="max-w-[1100px] font-display text-[clamp(4rem,8.2vw,8.8rem)] font-bold leading-[.86] tracking-[-.075em]">
+            <span className="block">We don&apos;t just</span>
+            <span className="block">build brands.</span>
+            <span className="block text-white/45">We create</span>
+            <span className="text-gradient block">experiences.</span>
+          </motion.h1>
+          <div className="mt-10 max-w-[590px] sm:mt-14"><p className="text-sm leading-7 text-white/55 sm:text-base">VisionVerve is a Creative Technology &amp; Experiences Company combining creativity, digital technology, audiovisual production and event production to bring ambitious ideas to life.</p><div className="mt-7 flex flex-wrap gap-7"><Link href="#contact" className="group inline-flex items-center gap-2 text-sm font-semibold">Start a project <ArrowUpRight className="h-4 w-4 text-primary transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" /></Link><Link href="#work" className="inline-flex items-center gap-2 text-sm text-white/55 transition-colors hover:text-white">See selected work <ArrowDownRight className="h-4 w-4" /></Link></div></div>
         </div>
-        <div><HeroArtwork /><div className="mt-4 flex justify-between font-mono text-[10px] uppercase tracking-[.18em] text-muted-foreground"><span>Creative / Technology / AV / Production</span><span className="hidden sm:inline">Cape Town, ZA</span></div></div>
+        <div className="mt-16 flex items-end justify-between gap-6 font-mono text-[10px] uppercase tracking-[.22em] text-white/40 sm:mt-20"><span>Creative / Technology / AV / Production</span><span className="text-right">Cape Town, ZA</span></div>
       </div>
     </section>
   )

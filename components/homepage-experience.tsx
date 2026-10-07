@@ -32,11 +32,10 @@ export function HomeHero() {
       <div className="relative mx-auto flex w-full max-w-[1500px] flex-col justify-between">
         <div>
           <div className="mb-6 flex items-center gap-4 sm:mb-8"><span className="h-px w-12 bg-primary" /><span className="font-mono text-[10px] uppercase tracking-[.26em] text-white/45">A Creative Technology &amp; Experiences Company</span></div>
-          <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, ease: 'easeOut' }} className="max-w-[1100px] font-display text-[clamp(72px,6.7vw,128px)] font-extrabold leading-[.92] tracking-[-.05em]">
-            <span className="block">We don&apos;t just</span>
-            <span className="block">build brands.</span>
-            <span className="block text-white/45">We create</span>
-            <span className="text-gradient block" style={{ backgroundImage: 'var(--brand-gradient)' }}>experiences.</span>
+          <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, ease: 'easeOut' }} className="max-w-[1100px] whitespace-nowrap font-display text-[clamp(72px,6.7vw,128px)] font-bold leading-[.92] tracking-[-.05em]">
+            <span className="block text-[#F5F3F7]">We don&apos;t just</span>
+            <span className="block text-[#F5F3F7]">build brands.</span>
+            <span className="block text-white/45">We create <span className="text-gradient" style={{ backgroundImage: 'var(--brand-gradient)', backgroundClip: 'text', WebkitBackgroundClip: 'text', color: 'transparent' }}>experiences.</span></span>
           </motion.h1>
           <div className="mt-4 max-w-[590px] sm:mt-6"><p className="text-sm leading-7 text-white/55 sm:text-base">VisionVerve is a Creative Technology &amp; Experiences Company combining creativity, digital technology, audiovisual production and event production to bring ambitious ideas to life.</p><div className="mt-7 flex flex-wrap gap-7"><Link href="#contact" className="group inline-flex items-center gap-2 text-sm font-semibold">Start a project <ArrowUpRight className="h-4 w-4 text-primary transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" /></Link><Link href="#work" className="inline-flex items-center gap-2 text-sm text-white/55 transition-colors hover:text-white">See selected work <ArrowDownRight className="h-4 w-4" /></Link></div></div>
         </div>

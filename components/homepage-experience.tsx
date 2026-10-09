@@ -22,6 +22,7 @@ const process = [
 
 export function HomeHero() {
   return (
+    {/* VisionVerve homepage hero section */}
     <section id="home" className="relative flex min-h-[100svh] overflow-hidden border-b border-white/10 bg-[#0c0b10] px-[clamp(32px,5vw,80px)] pb-8 pt-20 text-white sm:pb-12 sm:pt-24">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -left-32 top-1/3 h-[32rem] w-[32rem] rounded-full bg-primary/10 blur-[140px]" />

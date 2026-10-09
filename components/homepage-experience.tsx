@@ -32,7 +32,7 @@ export function HomeHero() {
       <div className="relative mx-auto flex w-full max-w-[1500px] flex-col justify-between">
         <div>
           <div className="mb-6 flex items-center gap-4 sm:mb-8"><span className="h-px w-12 bg-primary" /><span className="font-mono text-[10px] uppercase tracking-[.26em] text-white/45">A Creative Technology &amp; Experiences Company</span></div>
-          <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, ease: 'easeOut' }} className="max-w-[1100px] whitespace-nowrap text-[clamp(72px,6.7vw,128px)] font-extrabold leading-[0.92] tracking-[-0.05em]" style={{ fontFamily: 'var(--font-sora, "Sora", "Sora Fallback")' }}>
+          <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, ease: 'easeOut' }} className="max-w-[1100px] whitespace-nowrap text-[2em] font-bold leading-[0.92] tracking-[-0.05em]" style={{ fontFamily: 'var(--font-sora, "Sora", "Sora Fallback")' }}>
             <span className="block text-[#F5F3F7]">We Don&apos;t Just</span>
             <span className="block text-[#F5F3F7]">Build Brands.</span>
             <span className="block text-[#F5F3F7]">We <span className="text-gradient" style={{ backgroundImage: 'var(--brand-gradient)', backgroundClip: 'text', WebkitBackgroundClip: 'text', color: 'transparent' }}>Create Experiences.</span></span>

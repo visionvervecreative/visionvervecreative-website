@@ -3,16 +3,16 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Compass, Layers3, Menu, X } from 'lucide-react'
+import { CircleDot, Compass, Layers3, Mail, Menu, PanelsTopLeft, Sparkles, X } from 'lucide-react'
 import { ThemeToggle } from './theme-toggle'
 
 const items = [
   { id: 'home', label: 'Home', icon: Compass },
   { id: 'divisions', label: 'Divisions', icon: Layers3 },
-  { id: 'capabilities', label: 'Capabilities', icon: Layers3 },
-  { id: 'work', label: 'Work', icon: Compass },
-  { id: 'about', label: 'About', icon: Compass },
-  { id: 'contact', label: 'Contact', icon: Compass },
+  { id: 'capabilities', label: 'Capabilities', icon: Sparkles },
+  { id: 'work', label: 'Work', icon: PanelsTopLeft },
+  { id: 'about', label: 'About', icon: CircleDot },
+  { id: 'contact', label: 'Contact', icon: Mail },
 ]
 
 export function FloatingNavigation() {
@@ -56,7 +56,7 @@ export function FloatingNavigation() {
               className={`group flex items-center gap-2 rounded-xl p-2 text-xs transition-colors ${active === id ? 'bg-primary/15 text-foreground' : 'text-muted-foreground hover:bg-card hover:text-foreground'}`}
               aria-label={`Go to ${label}`}
             >
-              <Icon className="h-4 w-4" strokeWidth={1.5} />
+              <Icon className={`h-4 w-4 transition-colors duration-200 ${active === id ? 'text-primary' : 'text-muted-foreground group-hover:text-primary/80'}`} strokeWidth={1.5} />
               <AnimatePresence initial={false}>
                 {expanded && (
                   <motion.span initial={{ width: 0, opacity: 0 }} animate={{ width: 'auto', opacity: 1 }} exit={{ width: 0, opacity: 0 }} className="overflow-hidden whitespace-nowrap pr-1">

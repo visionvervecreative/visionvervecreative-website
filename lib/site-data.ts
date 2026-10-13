@@ -528,6 +528,7 @@ export type Project = {
   image: string
   tech: string[]
   services: string[]
+  url?: string
 }
 
 export const projects: Project[] = [
@@ -539,24 +540,7 @@ export const projects: Project[] = [
     image: '',
     tech: [],
     services: ['Brand Identity', 'Digital'],
-  },
-  {
-    title: 'Realeboga Auto Mobile Detailers',
-    client: 'Realeboga Auto Mobile Detailers',
-    description: 'A digital presence for a mobile automotive detailing business.',
-    category: 'Websites',
-    image: '',
-    tech: [],
-    services: ['Website Development', 'Digital'],
-  },
-  {
-    title: 'Spencer Auto Mechanical Works',
-    client: 'Spencer Auto Mechanical Works',
-    description: 'Creative and digital support for an automotive mechanical workshop.',
-    category: 'Websites',
-    image: '',
-    tech: [],
-    services: ['Website Development', 'Creative'],
+    url: 'https://www.sdconstructioncompany.co.za',
   },
   {
     title: 'Edinah Chagwedera Studio',
@@ -566,6 +550,17 @@ export const projects: Project[] = [
     image: '',
     tech: [],
     services: ['Creative Direction', 'Digital'],
+    url: 'https://www.edinahchagwederastudio.com',
+  },
+  {
+    title: 'Spencer Auto Mechanical Works',
+    client: 'Spencer Auto Mechanical Works',
+    description: 'Creative and digital support for an automotive mechanical workshop.',
+    category: 'Websites',
+    image: '',
+    tech: [],
+    services: ['Website Development', 'Creative'],
+    url: 'https://automotive-workshop-website.vercel.app/#home',
   },
   {
     title: 'P & I Legal Consultancy',
@@ -575,6 +570,16 @@ export const projects: Project[] = [
     image: '',
     tech: [],
     services: ['Website Development', 'Brand Identity'],
+    url: 'https://v0-legal-consultancy-website.vercel.app',
+  },
+  {
+    title: 'Realeboga Auto Mobile Detailers',
+    client: 'Realeboga Auto Mobile Detailers',
+    description: 'A digital presence for a mobile automotive detailing business.',
+    category: 'Websites',
+    image: '',
+    tech: [],
+    services: ['Website Development', 'Digital'],
   },
 ]
 

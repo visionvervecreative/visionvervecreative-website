@@ -72,7 +72,7 @@ export function FloatingNavigation() {
         </motion.div>
       </aside>
 
-      <div className="fixed bottom-5 right-5 z-[90] lg:hidden">
+      <div className="fixed bottom-[calc(1.25rem+env(safe-area-inset-bottom))] right-[calc(1.25rem+env(safe-area-inset-right))] z-[90] lg:hidden">
         <AnimatePresence>
           {expanded && (
             <motion.div initial={{ opacity: 0, y: 12, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 12, scale: 0.96 }} className="mb-3 flex flex-col gap-1 rounded-xl border border-slate-300/80 bg-white/90 p-2 shadow-[0_12px_36px_rgba(38,30,58,0.16)] backdrop-blur-xl dark:border-white/[0.08] dark:bg-[rgba(10,8,15,0.90)] dark:shadow-xl dark:shadow-black/20">

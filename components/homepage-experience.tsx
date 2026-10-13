@@ -31,17 +31,17 @@ export function HomeHero() {
         <div className="absolute bottom-[-12rem] right-1/4 h-[26rem] w-[26rem] rounded-full bg-accent/10 blur-[150px]" />
         <div className="absolute inset-0 opacity-25 [background-image:linear-gradient(rgba(255,255,255,.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.035)_1px,transparent_1px)] [background-size:72px_72px]" />
       </div>
-      <div className="relative mx-auto flex w-full max-w-[1500px] flex-col justify-between">
+      <div className="relative mx-auto flex min-w-0 w-full max-w-[1500px] flex-col justify-between">
         <div>
           <div className="mb-6 flex items-center gap-4 sm:mb-8"><span className="h-px w-12 bg-primary" /><span className="font-mono text-[10px] uppercase tracking-[.26em] text-white/45">A Creative Technology &amp; Experiences Company</span></div>
-          <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, ease: 'easeOut' }} className="max-w-[1100px] whitespace-nowrap text-[clamp(72px,6.7vw,128px)] font-extrabold leading-[0.92] tracking-[-0.05em]" style={{ fontFamily: 'var(--font-sora, "Sora", "Sora Fallback")' }}>
+          <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, ease: 'easeOut' }} className="max-w-full whitespace-normal break-words text-[clamp(42px,11.8vw,72px)] font-extrabold leading-[0.94] tracking-[-0.05em] md:max-w-[1100px] md:whitespace-nowrap md:text-[clamp(72px,6.7vw,128px)] md:leading-[0.92]" style={{ fontFamily: 'var(--font-sora, "Sora", "Sora Fallback")' }}>
             <span className="block text-[#F5F3F7]">We Don&apos;t Just</span>
             <span className="block text-[#F5F3F7]">Build Brands.</span>
             <span className="block text-[#F5F3F7]">We <span className="text-gradient" style={{ backgroundImage: 'var(--brand-gradient)', backgroundClip: 'text', WebkitBackgroundClip: 'text', color: 'transparent' }}>Create Experiences.</span></span>
           </motion.h1>
-          <div className="mt-4 max-w-[590px] sm:mt-6"><p className="text-sm leading-7 text-white/55 sm:text-base">VisionVerve is a Creative Technology &amp; Experiences Company combining creativity, digital technology, audiovisual production and event production to bring ambitious ideas to life.</p><div className="mt-7 flex flex-wrap gap-7"><Link href="#contact" className="group inline-flex items-center gap-2 text-sm font-semibold">Start a project <ArrowUpRight className="h-4 w-4 text-primary transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" /></Link><Link href="#work" className="inline-flex items-center gap-2 text-sm text-white/55 transition-colors hover:text-white">See selected work <ArrowDownRight className="h-4 w-4" /></Link></div></div>
+          <div className="mt-6 max-w-[590px] sm:mt-6"><p className="text-sm leading-7 text-white/55 sm:text-base">VisionVerve is a Creative Technology &amp; Experiences Company combining creativity, digital technology, audiovisual production and event production to bring ambitious ideas to life.</p><div className="mt-7 flex flex-col items-start gap-4 sm:flex-row sm:flex-wrap sm:gap-7"><Link href="#contact" className="group inline-flex items-center gap-2 text-sm font-semibold">Start a project <ArrowUpRight className="h-4 w-4 text-primary transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" /></Link><Link href="#work" className="inline-flex items-center gap-2 text-sm text-white/55 transition-colors hover:text-white">See selected work <ArrowDownRight className="h-4 w-4" /></Link></div></div>
         </div>
-        <div className="mt-16 flex items-end justify-between gap-6 font-mono text-[10px] uppercase tracking-[.22em] text-white/40 sm:mt-20"><span>Creative / Technology / AV / Production</span><span className="text-right">Cape Town, ZA</span></div>
+        <div className="mt-12 flex flex-col items-start gap-3 font-mono text-[10px] uppercase leading-relaxed tracking-[.18em] text-white/40 sm:mt-20 sm:flex-row sm:items-end sm:justify-between sm:gap-6 sm:tracking-[.22em]"><span className="max-w-full">Creative / Technology / AV / Production</span><span className="text-left sm:text-right">Cape Town, ZA</span></div>
       </div>
       </section>
     </>

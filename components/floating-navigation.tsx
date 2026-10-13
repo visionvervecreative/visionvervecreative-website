@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { AnimatePresence, motion } from 'framer-motion'
 import { CircleDot, Compass, Layers3, Mail, Menu, PanelsTopLeft, Sparkles, X } from 'lucide-react'
 import { ThemeToggle } from './theme-toggle'
@@ -16,10 +16,16 @@ const items = [
 ]
 
 export function FloatingNavigation() {
-  const [active, setActive] = useState('home')
+  const pathname = usePathname()
+  const [active, setActive] = useState(pathname === '/portfolio' ? 'work' : 'home')
   const [expanded, setExpanded] = useState(false)
 
   useEffect(() => {
+    if (pathname !== '/') {
+      setActive(pathname === '/portfolio' ? 'work' : 'home')
+      return
+    }
+
     const sections = items.map(({ id }) => document.getElementById(id)).filter(Boolean) as HTMLElement[]
     const observer = new IntersectionObserver(
       (entries) => {
@@ -32,9 +38,10 @@ export function FloatingNavigation() {
     )
     sections.forEach((section) => observer.observe(section))
     return () => observer.disconnect()
-  }, [])
+  }, [pathname])
 
   const jump = () => setExpanded(false)
+  const hrefFor = (id: string) => id === 'work' ? '/portfolio' : pathname === '/' ? `#${id}` : `/#${id}`
 
   return (
     <>
@@ -48,7 +55,7 @@ export function FloatingNavigation() {
           {items.map(({ id, label, icon: Icon }) => (
             <a
               key={id}
-              href={`#${id}`}
+              href={hrefFor(id)}
               onClick={jump}
               className={`group relative flex items-center gap-2 rounded-xl p-2 text-left text-xs transition-colors ${active === id ? 'bg-violet-100 text-violet-700 dark:bg-primary/15 dark:text-foreground' : 'text-slate-700 hover:bg-slate-100 hover:text-slate-950 dark:text-white/70 dark:hover:bg-white/10 dark:hover:text-white'}`}
               aria-label={`Go to ${label}`}
@@ -75,7 +82,7 @@ export function FloatingNavigation() {
           {expanded && (
             <motion.div initial={{ opacity: 0, y: 12, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 12, scale: 0.96 }} className="mb-3 flex flex-col gap-1 rounded-xl border border-slate-300/80 bg-white/90 p-2 shadow-[0_12px_36px_rgba(38,30,58,0.16)] backdrop-blur-xl dark:border-white/[0.08] dark:bg-[rgba(10,8,15,0.90)] dark:shadow-xl dark:shadow-black/20">
               {items.map(({ id, label }) => (
-                <a key={id} href={`#${id}`} onClick={jump} aria-current={active === id ? 'location' : undefined} className={`rounded-xl px-4 py-2 text-left text-sm ${active === id ? 'bg-violet-100 text-violet-700 dark:bg-primary/15 dark:text-foreground' : 'text-slate-700 hover:bg-slate-100 dark:text-white/70 dark:hover:bg-white/10'}`}>
+                <a key={id} href={hrefFor(id)} onClick={jump} aria-current={active === id ? 'location' : undefined} className={`rounded-xl px-4 py-2 text-left text-sm ${active === id ? 'bg-violet-100 text-violet-700 dark:bg-primary/15 dark:text-foreground' : 'text-slate-700 hover:bg-slate-100 dark:text-white/70 dark:hover:bg-white/10'}`}>
                   {label}
                 </a>
               ))}

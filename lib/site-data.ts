@@ -549,7 +549,7 @@ export const projects: Project[] = [
     category: 'Photography',
     image: '',
     tech: [],
-    services: ['Creative Direction', 'Digital'],
+    services: ['Website Development', 'Digital'],
     url: 'https://www.edinahchagwederastudio.com',
   },
   {
@@ -563,8 +563,8 @@ export const projects: Project[] = [
     url: 'https://automotive-workshop-website.vercel.app/#home',
   },
   {
-    title: 'P & I Legal Consultancy',
-    client: 'P & I Legal Consultancy',
+    title: 'P&I Legal Consultancy',
+    client: 'P&I Legal Consultancy',
     description: 'A clear, credible digital foundation for a legal consultancy.',
     category: 'Websites',
     image: '',
@@ -579,7 +579,7 @@ export const projects: Project[] = [
     category: 'Websites',
     image: '',
     tech: [],
-    services: ['Website Development', 'Digital'],
+    services: ['Creative Direction', 'Digital'],
   },
 ]
 

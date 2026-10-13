@@ -11,10 +11,25 @@ export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const updateScrollState = () => setScrolled(window.scrollY > 24)
+    let frame = 0
+    let lastState = false
+    const updateScrollState = () => {
+      frame = 0
+      const nextState = window.scrollY > 24
+      if (nextState !== lastState) {
+        lastState = nextState
+        setScrolled(nextState)
+      }
+    }
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(updateScrollState)
+    }
     updateScrollState()
-    window.addEventListener('scroll', updateScrollState, { passive: true })
-    return () => window.removeEventListener('scroll', updateScrollState)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      if (frame) window.cancelAnimationFrame(frame)
+    }
   }, [])
 
   return (

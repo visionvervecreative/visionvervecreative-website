@@ -21,9 +21,24 @@ export function BackToTop() {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > 800)
+    let frame = 0
+    let lastVisible = false
+    const updateVisibility = () => {
+      frame = 0
+      const nextVisible = window.scrollY > 800
+      if (nextVisible !== lastVisible) {
+        lastVisible = nextVisible
+        setVisible(nextVisible)
+      }
+    }
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(updateVisibility)
+    }
     window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      if (frame) window.cancelAnimationFrame(frame)
+    }
   }, [])
 
   return (

@@ -528,6 +528,7 @@ export type Project = {
   image: string
   tech: string[]
   services: string[]
+  url?: string
 }
 
 export const projects: Project[] = [
@@ -539,15 +540,17 @@ export const projects: Project[] = [
     image: '',
     tech: [],
     services: ['Brand Identity', 'Digital'],
+    url: 'https://www.sdconstructioncompany.co.za',
   },
   {
-    title: 'Realeboga Auto Mobile Detailers',
-    client: 'Realeboga Auto Mobile Detailers',
-    description: 'A digital presence for a mobile automotive detailing business.',
-    category: 'Websites',
+    title: 'Edinah Chagwedera Studio',
+    client: 'Edinah Chagwedera Studio',
+    description: 'A considered creative direction for a photography and visual studio.',
+    category: 'Photography',
     image: '',
     tech: [],
     services: ['Website Development', 'Digital'],
+    url: 'https://www.edinahchagwederastudio.com',
   },
   {
     title: 'Spencer Auto Mechanical Works',
@@ -557,24 +560,26 @@ export const projects: Project[] = [
     image: '',
     tech: [],
     services: ['Website Development', 'Creative'],
+    url: 'https://automotive-workshop-website.vercel.app/#home',
   },
   {
-    title: 'Edinah Chagwedera Studio',
-    client: 'Edinah Chagwedera Studio',
-    description: 'A considered creative direction for a photography and visual studio.',
-    category: 'Photography',
-    image: '',
-    tech: [],
-    services: ['Creative Direction', 'Digital'],
-  },
-  {
-    title: 'P & I Legal Consultancy',
-    client: 'P & I Legal Consultancy',
+    title: 'P&I Legal Consultancy',
+    client: 'P&I Legal Consultancy',
     description: 'A clear, credible digital foundation for a legal consultancy.',
     category: 'Websites',
     image: '',
     tech: [],
     services: ['Website Development', 'Brand Identity'],
+    url: 'https://v0-legal-consultancy-website.vercel.app',
+  },
+  {
+    title: 'Realeboga Auto Mobile Detailers',
+    client: 'Realeboga Auto Mobile Detailers',
+    description: 'A digital presence for a mobile automotive detailing business.',
+    category: 'Websites',
+    image: '',
+    tech: [],
+    services: ['Creative Direction', 'Digital'],
   },
 ]
 

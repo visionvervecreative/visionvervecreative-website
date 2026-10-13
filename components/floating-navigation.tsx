@@ -34,10 +34,7 @@ export function FloatingNavigation() {
     return () => observer.disconnect()
   }, [])
 
-  const jump = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    setExpanded(false)
-  }
+  const jump = () => setExpanded(false)
 
   return (
     <>
@@ -49,12 +46,13 @@ export function FloatingNavigation() {
           onMouseLeave={() => setExpanded(false)}
         >
           {items.map(({ id, label, icon: Icon }) => (
-            <button
+            <a
               key={id}
-              type="button"
-              onClick={() => jump(id)}
+              href={`#${id}`}
+              onClick={jump}
               className={`group relative flex items-center gap-2 rounded-xl p-2 text-left text-xs transition-colors ${active === id ? 'bg-violet-100 text-violet-700 dark:bg-primary/15 dark:text-foreground' : 'text-slate-700 hover:bg-slate-100 hover:text-slate-950 dark:text-white/70 dark:hover:bg-white/10 dark:hover:text-white'}`}
               aria-label={`Go to ${label}`}
+              aria-current={active === id ? 'location' : undefined}
             >
               <Icon className={`h-4 w-4 shrink-0 transition-colors duration-200 ${active === id ? 'text-violet-700 dark:text-primary' : 'text-slate-700 group-hover:text-violet-700 dark:text-white/70 dark:group-hover:text-primary/80'}`} strokeWidth={1.5} />
               <AnimatePresence initial={false}>
@@ -65,7 +63,7 @@ export function FloatingNavigation() {
                 )}
               </AnimatePresence>
               {active === id && <span className="absolute right-0 h-4 w-0.5 rounded-full bg-brand-gradient" />}
-            </button>
+              </a>
           ))}
           <div className="my-1 h-px w-6 bg-border" />
           <ThemeToggle />
@@ -77,9 +75,9 @@ export function FloatingNavigation() {
           {expanded && (
             <motion.div initial={{ opacity: 0, y: 12, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 12, scale: 0.96 }} className="mb-3 flex flex-col gap-1 rounded-xl border border-slate-300/80 bg-white/90 p-2 shadow-[0_12px_36px_rgba(38,30,58,0.16)] backdrop-blur-xl dark:border-white/[0.08] dark:bg-[rgba(10,8,15,0.90)] dark:shadow-xl dark:shadow-black/20">
               {items.map(({ id, label }) => (
-                <button key={id} type="button" onClick={() => jump(id)} className={`rounded-xl px-4 py-2 text-left text-sm ${active === id ? 'bg-violet-100 text-violet-700 dark:bg-primary/15 dark:text-foreground' : 'text-slate-700 hover:bg-slate-100 dark:text-white/70 dark:hover:bg-white/10'}`}>
+                <a key={id} href={`#${id}`} onClick={jump} aria-current={active === id ? 'location' : undefined} className={`rounded-xl px-4 py-2 text-left text-sm ${active === id ? 'bg-violet-100 text-violet-700 dark:bg-primary/15 dark:text-foreground' : 'text-slate-700 hover:bg-slate-100 dark:text-white/70 dark:hover:bg-white/10'}`}>
                   {label}
-                </button>
+                </a>
               ))}
               <ThemeToggle />
             </motion.div>

@@ -8,11 +8,11 @@ import { ArrowUpRight, FileText } from 'lucide-react'
 import { projects, type Category } from '@/lib/site-data'
 import { SectionHeading } from '@/components/section-heading'
 
-const filters: ('All' | Category)[] = ['All', 'Websites', 'Photography', 'Videography', 'Branding', 'Software']
+const filters: ('All' | Category)[] = ['All', 'Websites', 'Branding']
 
 export function Portfolio() {
   const [active, setActive] = useState<'All' | Category>('All')
-  const filtered = active === 'All' ? projects : projects.filter((p) => p.category === active)
+  const filtered = active === 'All' ? projects : projects.filter((p) => p.categories.includes(active))
 
   return (
     <section id="portfolio" className="relative py-24 sm:py-32">
@@ -67,7 +67,7 @@ export function Portfolio() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
                   <span className="absolute left-4 top-4 rounded-full border border-border bg-background/70 px-3 py-1 text-xs backdrop-blur">
-                    {project.category}
+                    {project.services.join(' / ')}
                   </span>
                 </div>
                 <div className="p-6">
@@ -86,12 +86,13 @@ export function Portfolio() {
                     ))}
                   </div>
                   <div className="mt-6 flex items-center gap-3">
-                    <Link
-                      href="/case-studies"
-                      className="inline-flex items-center gap-1.5 rounded-full bg-brand-gradient px-4 py-2 text-xs font-semibold text-white"
-                    >
-                      View Case Study <ArrowUpRight className="h-3.5 w-3.5" />
-                    </Link>
+                    {project.url ? (
+                      <a href={project.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-full bg-brand-gradient px-4 py-2 text-xs font-semibold text-white">
+                        Visit Website <ArrowUpRight className="h-3.5 w-3.5" />
+                      </a>
+                    ) : (
+                      <span className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-xs font-semibold text-muted-foreground">Advertisement materials in progress</span>
+                    )}
                     <Link
                       href="/portfolio"
                       className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-xs font-semibold transition-colors hover:bg-background"

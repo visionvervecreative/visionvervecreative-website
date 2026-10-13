@@ -525,6 +525,7 @@ export type Project = {
   client: string
   description: string
   category: Category
+  categories: Category[]
   image: string
   tech: string[]
   services: string[]
@@ -537,7 +538,8 @@ export const projects: Project[] = [
     client: 'SD Construction Company',
     description: 'Brand identity and digital foundations for a construction company.',
     category: 'Branding',
-    image: '',
+    categories: ['Branding', 'Websites'],
+    image: '/images/portfolio/sd-construction-home.png',
     tech: [],
     services: ['Brand Identity', 'Digital'],
     url: 'https://www.sdconstructioncompany.co.za',
@@ -545,9 +547,10 @@ export const projects: Project[] = [
   {
     title: 'Edinah Chagwedera Studio',
     client: 'Edinah Chagwedera Studio',
-    description: 'A considered creative direction for a photography and visual studio.',
-    category: 'Photography',
-    image: '',
+    description: 'A digital presence for a visual studio.',
+    category: 'Websites',
+    categories: ['Websites'],
+    image: '/images/portfolio/edinah-studio-home.png',
     tech: [],
     services: ['Website Development', 'Digital'],
     url: 'https://www.edinahchagwederastudio.com',
@@ -557,7 +560,8 @@ export const projects: Project[] = [
     client: 'Spencer Auto Mechanical Works',
     description: 'Creative and digital support for an automotive mechanical workshop.',
     category: 'Websites',
-    image: '',
+    categories: ['Websites', 'Branding'],
+    image: '/images/portfolio/spencer-auto-home.png',
     tech: [],
     services: ['Website Development', 'Creative'],
     url: 'https://automotive-workshop-website.vercel.app/#home',
@@ -567,7 +571,8 @@ export const projects: Project[] = [
     client: 'P&I Legal Consultancy',
     description: 'A clear, credible digital foundation for a legal consultancy.',
     category: 'Websites',
-    image: '',
+    categories: ['Websites', 'Branding'],
+    image: '/images/portfolio/pi-legal-home.png',
     tech: [],
     services: ['Website Development', 'Brand Identity'],
     url: 'https://v0-legal-consultancy-website.vercel.app',
@@ -575,9 +580,10 @@ export const projects: Project[] = [
   {
     title: 'Realeboga Auto Mobile Detailers',
     client: 'Realeboga Auto Mobile Detailers',
-    description: 'A digital presence for a mobile automotive detailing business.',
-    category: 'Websites',
-    image: '',
+    description: 'Advertisement materials and digital visibility.',
+    category: 'Branding',
+    categories: ['Branding'],
+    image: '/images/project-branding.png',
     tech: [],
     services: ['Creative Direction', 'Digital'],
   },

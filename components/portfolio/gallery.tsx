@@ -2,16 +2,15 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import { projects, type Category } from '@/lib/site-data'
 
-const filters: ('All' | Category)[] = ['All', 'Websites', 'Branding', 'Photography', 'Videography', 'Software']
+const filters: ('All' | Category)[] = ['All', 'Websites', 'Branding']
 
 export function PortfolioGallery() {
   const [active, setActive] = useState<'All' | Category>('All')
-  const visible = active === 'All' ? projects : projects.filter((p) => p.category === active)
+  const visible = active === 'All' ? projects : projects.filter((p) => p.categories.includes(active))
 
   return (
     <section className="relative py-16 sm:py-20">
@@ -60,7 +59,7 @@ export function PortfolioGallery() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent opacity-80" />
                   <span className="absolute left-4 top-4 rounded-full bg-background/70 px-3 py-1 text-xs font-medium backdrop-blur">
-                    {p.category}
+                    {p.services.join(' / ')}
                   </span>
                 </div>
 
@@ -77,13 +76,14 @@ export function PortfolioGallery() {
                     ))}
                   </div>
 
-                  <Link
-                    href="/case-studies"
-                    className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-foreground transition-colors hover:text-primary"
-                  >
-                    View case study
-                    <ArrowUpRight className="size-4" />
-                  </Link>
+                  {p.url ? (
+                    <a href={p.url} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-foreground transition-colors hover:text-primary">
+                      Visit Website
+                      <ArrowUpRight className="size-4" />
+                    </a>
+                  ) : (
+                    <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-muted-foreground">Advertisement materials in progress</span>
+                  )}
                 </div>
               </motion.article>
             ))}
